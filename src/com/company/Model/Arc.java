@@ -2,7 +2,7 @@ package com.company.Model;
 
 public class Arc {
 
-    private Colour colour;
+    private int player;
     private int x;
     private int y;
     private boolean horizontal;
@@ -15,14 +15,14 @@ public class Arc {
         return !horizontal;
     }
 
-    public Arc(Colour colour, int x, int y) {
-        this.colour = colour;
+    public Arc(int player, int x, int y) {
+        this.player = player;
         this.x = x;
         this.y = y;
     }
 
-    public Colour getColour() {
-        return colour;
+    public int getColour() {
+        return player;
     }
 
     public int getX() {
@@ -32,4 +32,5 @@ public class Arc {
     public int getY() {
         return y;
     }
+
 }

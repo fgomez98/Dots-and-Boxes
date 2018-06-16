@@ -76,7 +76,7 @@ public class Board {
         return false;
     }
 
-    public void initBoards(int[][] board, int fils, int cols) {
+    private void initBoards(int[][] board, int fils, int cols) {
         for (int i = 0; i < fils; i++) {
             for (int j = 0; j < cols; j++) {
                 board[i][j] = 0;
@@ -84,10 +84,20 @@ public class Board {
         }
     }
 
-    public void fillBoard(int[][] dest, int[][] source, int fils, int cols) {
+    private void fillBoard(int[][] dest, int[][] source, int fils, int cols) {
         for (int i = 0; i < fils; i++) {
             for (int j = 0; j < cols; j++) {
                 dest[i][j] = source[i][j];
+            }
+        }
+    }
+
+    private void fillMoves(Set<Arc> moves, int[][] board, int fils, int cols) {
+        for (int i = 0; i < fils ; i++) {
+            for (int j = 0; j < cols; j++) {
+                if (board[i][j] == NOARC) {
+                    moves.add(new Arc(0, i, j));
+                }
             }
         }
     }
@@ -100,13 +110,11 @@ public class Board {
         return player2Score;
     }
 
-    public Set<Arc> getPosibleMove() {
+    public Set<Arc> getPosibleMoves() {
         Set<Arc> moves = new HashSet<Arc>();
-        //arcos horizontales
-        for (int i = 0; i < N-1 ; i++) {
-
-        }
-        return null;
+        fillMoves(moves, boxHorizontal, N-1, N);
+        fillMoves(moves, boxVertical, N, N-1);
+        return moves;
     }
 
     public int getN() {
