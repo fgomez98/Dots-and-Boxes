@@ -6,7 +6,7 @@ public class Board {
     private final static int ARC = 1;
     private final static int NOARC = 0;
     private final static int PLAYER1 = 1;
-    private final static int PLAYER2 = 2;
+    private final static int PLAYER2 = -1;
     private int[][] boxBoard;
     private int[][] boxHorizontal;
     private int[][] boxVertical;
@@ -102,12 +102,8 @@ public class Board {
         }
     }
 
-    public int getPlayer1Score() {
-        return player1Score;
-    }
-
-    public int getPlayer2Score() {
-        return player2Score;
+    public int getPlayerScore(int player){
+        return (player == 1)?player1Score:player2Score;
     }
 
     public Set<Arc> getPosibleMoves() {
@@ -121,7 +117,7 @@ public class Board {
         return N;
     }
 
-    public boolean isWinner() {
+    public boolean boardComplete() {
         return (player1Score + player2Score) == Math.pow(N-1, 2);
     }
 
