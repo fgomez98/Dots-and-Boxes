@@ -1,6 +1,7 @@
 package com.company.Model;
 
-public class Board {
+import java.util.HashSet;
+import java.util.Set;
 
     private final static int ARC = 1;
     private final static int NOARC = 0;
@@ -19,6 +20,10 @@ public class Board {
         boxVertical = new Integer[N][N-1];
         player1Score = 0;
         player2Score = 0;
+        this.N = N;
+        initBoards(boxBoard, N-1, N-1);
+        initBoards(boxHorizontal, N, N-1);
+        initBoards(boxVertical, N-1, N);
     }
 
     public boolean setHEdge(int x, int y, int player){
@@ -67,7 +72,63 @@ public class Board {
         return false;
     }
 
-    public boolean fillBoards(int n) {
-        return false;
+    public void initBoards(Colour[][] board, int fils, int cols) {
+        for (int i = 0; i < fils; i++) {
+            for (int j = 0; j < cols; j++) {
+                board[i][j] = Colour.ALBINO;
+            }
+        }
+    }
+
+    public void fillBoard(Colour[][] dest, Colour[][] source, int fils, int cols) {
+        for (int i = 0; i < fils; i++) {
+            for (int j = 0; j < cols; j++) {
+                dest[i][j] = source[i][j];
+            }
+        }
+    }
+
+    public int getPlayer1Score() {
+        return player1Score;
+    }
+
+    public int getPlayer2Score() {
+        return player2Score;
+    }
+
+    public Set<Arc> getPosibleMove() {
+        Set<Arc> moves = new HashSet<Arc>();
+        //arcos horizontales
+        for (int i = 0; i < N-1 ; i++) {
+
+        }
+    }
+
+    public int getN() {
+        return N;
+    }
+
+    public boolean isWinner() {
+        return (player1Score + player2Score) == Math.pow(N-1, 2);
+    }
+
+    public Colour getWinner() {
+        if (player1Score > player2Score) {
+            return PLAYER1;
+        } else if (player2Score > player1Score) {
+            return PLAYER2;
+        } else {
+            return Colour.ALBINO;
+        }
+    }
+
+    protected Board clone() throws CloneNotSupportedException {
+        Board aux = new Board(N);
+        fillBoard(aux.boxHorizontal, this.boxHorizontal,N,N-1);
+        fillBoard(aux.boxVertical, this.boxVertical,N-1,N);
+        fillBoard(aux.boxBoard, this.boxBoard, N-1, N-1);
+        aux.player1Score = this.player1Score;
+        aux.player2Score = this.player2Score;
+        return aux;
     }
 }
