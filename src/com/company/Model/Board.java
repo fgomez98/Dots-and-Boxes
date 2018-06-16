@@ -1,3 +1,5 @@
+package com.company.Model;
+
 public class Board {
     private Integer[][] boxBoard;
     private Integer[][] boxHorizontal;
@@ -8,6 +10,7 @@ public class Board {
         boxHorizontal = new Integer[N][N-1];
         boxVertical = new Integer[N-1][N];
     }
+
 
 
 }
