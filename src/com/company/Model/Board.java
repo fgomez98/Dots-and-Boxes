@@ -1,6 +1,8 @@
 package com.company.Model;
 
 import java.util.HashSet;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Set;
 public class Board {
     private final static int ARC = 1;
@@ -92,7 +94,7 @@ public class Board {
         }
     }
 
-    private void fillMoves(Set<Arc> moves, int[][] board, int fils, int cols) {
+    private void fillMoves(List<Arc> moves, int[][] board, int fils, int cols) {
         for (int i = 0; i < fils ; i++) {
             for (int j = 0; j < cols; j++) {
                 if (board[i][j] == NOARC) {
@@ -106,8 +108,8 @@ public class Board {
         return (player == 1)?player1Score:player2Score;
     }
 
-    public Set<Arc> getPosibleMoves() {
-        Set<Arc> moves = new HashSet<Arc>();
+    public List<Arc> getPosibleMoves() {
+        List<Arc> moves = new LinkedList<>();
         fillMoves(moves, boxHorizontal, N-1, N);
         fillMoves(moves, boxVertical, N, N-1);
         return moves;
@@ -131,7 +133,7 @@ public class Board {
         }
     }
 
-    protected Board clone() throws CloneNotSupportedException {
+    protected Board clone() {
         Board aux = new Board(N);
         fillBoard(aux.boxHorizontal, this.boxHorizontal,N,N-1);
         fillBoard(aux.boxVertical, this.boxVertical,N-1,N);
@@ -139,5 +141,17 @@ public class Board {
         aux.player1Score = this.player1Score;
         aux.player2Score = this.player2Score;
         return aux;
+    }
+
+    public void addArc(Arc arc) {
+       //pedro codeate esto
+    }
+
+    public void removeArc(Arc arc) {
+        //pedro codeate esto
+    }
+
+    public int scoresCheck() {
+        return player2Score + player1Score;
     }
 }

@@ -1,8 +1,6 @@
 package com.company.Model;
-import java.util.LinkedList;
-import java.util.List;
 
-public class MiniMax implements Heuristica{
+public class MiniMax implements Heuristica {
 
     @Override
     public int evaluate(Board board) {
@@ -13,9 +11,24 @@ public class MiniMax implements Heuristica{
         if (depth == 0 || current.board.boardComplete()) {
             return evaluate(current.board);
         }
-        for (Arc arc : current.board.getPosibleMoves()) {
-            int score = board
+        if (maximaizer) { //MAXIMIZER
+            int maxEvaluation = Integer.MIN_VALUE;
+            current.generateChildren();
+            for (Tree child : current.children) {
+                int auxEvalution = minimax(child, depth-1, !maximaizer, -player); {
+                    maxEvaluation = Math.max(maxEvaluation, auxEvalution);
+                }
+            }
+            return maxEvaluation;
+        } else { //MINIMIZER
+            int minEvaluation = Integer.MAX_VALUE;
+            current.generateChildren();
+            for (Tree child : current.children) {
+                int auxEvaluaation = minimax(child, depth-1, !maximaizer, -player);
+                minEvaluation = Math.min(minEvaluation, auxEvaluaation);
+            }
+            return minEvaluation;
         }
-
     }
+
 }
