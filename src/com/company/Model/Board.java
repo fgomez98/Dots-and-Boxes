@@ -143,12 +143,62 @@ public class Board {
         return aux;
     }
 
-    public void addArc(Arc arc) {
-       //pedro codeate esto
+    public boolean addArc(Arc arc) {
+        if(arc.isHorizontal()){
+            return setHEdge(arc.getX(),arc.getY(), arc.getPlayer());
+        }else{
+            return setVEdge(arc.getX(),arc.getY(),arc.getPlayer());
+        }
     }
 
-    public void removeArc(Arc arc) {
-        //pedro codeate esto
+    public boolean removeArc(Arc arc) {
+        int x = arc.getX();
+        int y = arc.getY();
+        if(arc.isHorizontal()){
+            if(boxHorizontal[y][x] == NOARC){
+                return false;
+            }else{
+                if(y < N && boxHorizontal[y+1][x] == ARC && boxVertical[y][x] == ARC && boxVertical[y][x+1] == ARC){
+                    if(boxBoard[y][x] == 1)
+                        player1Score--;
+                    else
+                        player2Score--;
+                    boxBoard[y][x] = 0;
+
+                }
+                if(y > 0 && boxHorizontal[y-1][x] == ARC && boxVertical[y-1][x] == ARC && boxVertical[y-1][x+1] == ARC){
+                    if(boxBoard[y-1][x] == 1)
+                        player1Score--;
+                    else
+                        player2Score--;
+                    boxBoard[y-1][x] = 0;
+                }
+
+                boxHorizontal[y][x] = NOARC;
+                return true;
+            }
+        }else{
+            if (boxVertical[y][x] == NOARC){
+                return false;
+            }else{
+                if(x < N && boxVertical[y][x + 1] == ARC && boxHorizontal[y][x] == ARC && boxHorizontal[y - 1][x] == ARC){
+                    if(boxBoard[y][x] == 1)
+                        player1Score--;
+                    else
+                        player2Score--;
+                    boxBoard[y][x] = 0;
+                }
+                if (x > 0 && boxVertical[y][x - 1] == ARC && boxHorizontal[y - 1][x - 1] == ARC && boxHorizontal[y][x - 1] == ARC){
+                    if(boxBoard[y][x-1] == 1)
+                        player1Score--;
+                    else
+                        player2Score--;
+                    boxBoard[y][x-1] = 0;
+                }
+                boxVertical[y][x] = NOARC;
+                return true;
+            }
+        }
     }
 
     public int scoresCheck() {

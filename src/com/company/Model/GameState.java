@@ -2,7 +2,7 @@ package com.company.Model;
 
 import com.company.Model.Board;
 
-public class GameState {
+public class GameState{
 
     private Board board;
     private int mode;

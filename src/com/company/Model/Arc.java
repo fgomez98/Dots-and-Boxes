@@ -21,7 +21,7 @@ public class Arc {
         this.y = y;
     }
 
-    public int getColour() {
+    public int getPlayer() {
         return player;
     }
 

@@ -3,13 +3,13 @@ package com.company.Model;
 public class MiniMax implements Heuristica {
 
     @Override
-    public int evaluate(Board board) {
+    public int evaluate(Board board, int player) {
         return 0;
     }
 
     public int minimax(Tree current, int depth, boolean maximaizer, int player) {
         if (depth == 0 || current.board.boardComplete()) {
-            return evaluate(current.board);
+            return evaluate(current.board, player);
         }
         if (maximaizer) { //MAXIMIZER
             int maxEvaluation = Integer.MIN_VALUE;
