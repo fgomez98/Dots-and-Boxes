@@ -12,22 +12,7 @@ public class Board {
     private Player[][] boxVertical;
     private Player player1, player2;
     private int N;
-
-    public Board(int n, boolean vsHuman) {
-        player1 = new Player();
-        if (vsHuman) {
-            player1 = new Player();
-        } else {
-            player2 = new Opponent();
-        }
-        N = n;
-        boxBoard = new Player[N-1][N-1];
-        boxHorizontal = new Player[N-1][N];
-        boxVertical = new Player[N][N-1];
-        initBoards(boxBoard, N-1, N-1);
-        initBoards(boxHorizontal, N, N-1);
-        initBoards(boxVertical, N-1, N);
-    }
+    private int turn;
 
     public Board(int n) {
         N = n;
@@ -39,7 +24,18 @@ public class Board {
         initBoards(boxVertical, N-1, N);
     }
 
-    public Board(int n, Player player1, Player player2) {
+    Board(int n, boolean vsHuman) {
+        this(n);
+        player1 = new Player();
+        if (vsHuman) {
+            player1 = new Player();
+        } else {
+            player2 = new Opponent();
+        }
+    }
+
+    Board(int n, Player player1, Player player2) {
+        this(n);
         this.player1 = player1;
         this.player2 = player2;
     }

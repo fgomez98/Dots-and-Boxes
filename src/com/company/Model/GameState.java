@@ -16,15 +16,19 @@ public class GameState{
         board.addArc(new Arc(currentPlayer, x,y));
     }
 
+    public void handelInput(int x, int y) {
+
+    }
 
 
 
-/*
+
+
     //Para entrar aca, si o si tengo que verificar si tengo jugadas disponibles
     public boolean setPlayer(Arc arc, Player player){
-        int points = board.getPlayerScore(player);
+        int points = player.getScore();
         while(arc.isHorizontal()? board.setHEdge(arc.getX(),arc.getY(), player):board.setVEdge(arc.getX(),arc.getY(), player)){
-                if(points != board.getPlayerScore(player)){
+                if(points != player.getScore()){
                     return true;
                 }
             }
@@ -32,11 +36,11 @@ public class GameState{
     }
 
 
-
+/*
     public int finished(){
         if (board.boardComplete())
             return board.getWinner();
         return 2;//porque no es ni uno ni -1, o sea, no termino
     }
-*/
+    */
 }
