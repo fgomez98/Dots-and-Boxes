@@ -1,5 +1,6 @@
 package com.company.Controller;
 
+import com.company.Model.GameState;
 import javafx.fxml.FXML;
 import javafx.scene.layout.AnchorPane;
 
@@ -18,6 +19,6 @@ public class PaneController {
 
     public void initModel(GameState gameState) {
         this.gameState = gameState;
-        player1Score.addTextListener();
+        //player1Score.addTextListener();
     }
 }

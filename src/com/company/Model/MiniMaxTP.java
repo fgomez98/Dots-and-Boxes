@@ -8,7 +8,7 @@ public class MiniMaxTP extends MiniMax {
 
     public int minimax(Tree current, long timeLimit, boolean maximaizer, Player currentPlayer, Player nextPlayer, int alpha, int beta) {
         if (System.currentTimeMillis() == timeLimit) {
-            return evaluate(current.getBoard(), current.getBoard().getCurrentPlayer(), currentPlayer);
+            return heuristica(current.getBoard(), current.getBoard().getCurrentPlayer(), currentPlayer);
         }
         if (maximaizer) { //MAXIMIZER
             int maxEvaluation = Integer.MIN_VALUE;

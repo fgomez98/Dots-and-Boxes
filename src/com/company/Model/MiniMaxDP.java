@@ -1,9 +1,5 @@
 package com.company.Model;
 
-import org.omg.PortableInterceptor.INACTIVE;
-
-import java.util.Set;
-
 public class MiniMaxDP extends MiniMax {
 
     public MiniMaxDP(int depthOrTime) {
@@ -12,7 +8,7 @@ public class MiniMaxDP extends MiniMax {
 
     public int minimax(Tree current, int depth, boolean maximaizer, Player currentPlayer, Player nextPlayer, int alpha, int beta) {
         if (depth == 0 || current.getBoard().boardComplete()) {
-            return evaluate(current.getBoard(), current.getBoard().getCurrentPlayer(), currentPlayer);
+            return heuristica(current.getBoard(), current.getBoard().getCurrentPlayer(), currentPlayer);
         }
         if (maximaizer) { //MAXIMIZER
             int maxEvaluation = Integer.MIN_VALUE;

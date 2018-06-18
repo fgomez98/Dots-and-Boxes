@@ -1,8 +1,8 @@
 package com.company;
 
 
-import com.company.Controller.GameState;
 import com.company.Controller.PaneController;
+import com.company.Model.GameState;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -31,7 +31,7 @@ public class Main extends Application{
         root.setCenter(paneLoader.load());
         PaneController paneController = paneLoader.getController();
 
-        GameState model = new GameState(4,true,8);
+        GameState model = new GameState(4,true,8, true, true);
         paneController.initModel(model);
 
         Scene scene = new Scene(root, 800, 600);

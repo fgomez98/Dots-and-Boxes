@@ -102,5 +102,17 @@ public class GameState {
         board.printBoard();
     }
 
+    public Player[][] getVBoard(){
+        return board.getBoxVertical();
+    }
+
+    public Player[][] getHBoard(){
+        return board.getBoxHorizontal();
+    }
+
+    public Player[][] getBBoard(){
+        return board.getBoxBoard();
+    }
+
 
 }

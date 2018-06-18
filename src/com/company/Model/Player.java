@@ -1,12 +1,19 @@
 package com.company.Model;
 
-public class Player implements Cloneable{
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
+
+public class Player implements Cloneable, Serializable {
     private int score;
+    private int id;
    // private String name;
     //color
 
-    public Player(int score) {
+    public Player(int score, int id) {
         this.score = score;
+        this.id = id;
     }
 
     public boolean isHuman() {
@@ -22,7 +29,21 @@ public class Player implements Cloneable{
     }
 
     public Player clone() {
-        return new Player(this.score);
+        return new Player(this.score, this.id);
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void writeObject(ObjectOutputStream out) throws IOException {
+        out.defaultWriteObject();
+        out.writeObject(score);
+    }
+
+    public void readObject(ObjectInputStream ois) throws IOException, ClassNotFoundException {
+        ois.defaultReadObject();
+        score = (int) ois.readObject();
     }
 
     @Override
@@ -32,12 +53,11 @@ public class Player implements Cloneable{
 
         Player player = (Player) o;
 
-        return score == player.score;
+        return id == player.id;
     }
 
     @Override
     public int hashCode() {
-        return score;
+        return id;
     }
-
 }
