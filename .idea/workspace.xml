@@ -1,18 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bf556371-d6e6-4142-987d-4a21bd45f818" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/Main.java" afterPath="$PROJECT_DIR$/src/com/company/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/Model/Board.java" afterPath="$PROJECT_DIR$/src/com/company/Model/Board.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/Model/GameState.java" afterPath="$PROJECT_DIR$/src/com/company/Model/GameState.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/Model/MiniMax.java" afterPath="$PROJECT_DIR$/src/com/company/Model/MiniMax.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/Model/MiniMaxD.java" afterPath="$PROJECT_DIR$/src/com/company/Model/MiniMaxD.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/Model/MiniMaxDP.java" afterPath="$PROJECT_DIR$/src/com/company/Model/MiniMaxDP.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/Model/MiniMaxT.java" afterPath="$PROJECT_DIR$/src/com/company/Model/MiniMaxT.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/Model/MiniMaxTP.java" afterPath="$PROJECT_DIR$/src/com/company/Model/MiniMaxTP.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/Model/Tree.java" afterPath="$PROJECT_DIR$/src/com/company/Model/Tree.java" />
-    </list>
+    <list default="true" id="bf556371-d6e6-4142-987d-4a21bd45f818" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -23,11 +12,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Board.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Board.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/company/Model/Board.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2190">
-              <caret line="165" column="28" lean-forward="true" selection-start-line="165" selection-start-column="28" selection-end-line="165" selection-end-column="28" />
+            <state relative-caret-position="117">
+              <caret line="157" column="0" lean-forward="false" selection-start-line="157" selection-start-column="0" selection-end-line="157" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -72,11 +61,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GameState.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="GameState.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/company/Model/GameState.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="886">
-              <caret line="61" column="37" lean-forward="false" selection-start-line="61" selection-start-column="37" selection-end-line="61" selection-end-column="37" />
+            <state relative-caret-position="154">
+              <caret line="61" column="35" lean-forward="true" selection-start-line="61" selection-start-column="35" selection-end-line="61" selection-end-column="35" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -259,12 +248,12 @@
       <workItem from="1529291208019" duration="7499000" />
       <workItem from="1529300500237" duration="5000" />
       <workItem from="1529328828845" duration="7453000" />
-      <workItem from="1529341633076" duration="5734000" />
+      <workItem from="1529341633076" duration="6024000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="29013000" />
+    <option name="totallyTimeSpent" value="29303000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="101" y="30" width="1241" height="772" extended-state="0" />
@@ -278,7 +267,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15571429" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.5" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -860,21 +849,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/Model/GameState.java">
+    <entry file="file://$PROJECT_DIR$/src/com/company/Model/Board.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="886">
-          <caret line="61" column="37" lean-forward="false" selection-start-line="61" selection-start-column="37" selection-end-line="61" selection-end-column="37" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="117">
+          <caret line="157" column="0" lean-forward="false" selection-start-line="157" selection-start-column="0" selection-end-line="157" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/Model/Board.java">
+    <entry file="file://$PROJECT_DIR$/src/com/company/Model/GameState.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2190">
-          <caret line="165" column="28" lean-forward="true" selection-start-line="165" selection-start-column="28" selection-end-line="165" selection-end-column="28" />
-          <folding />
+        <state relative-caret-position="154">
+          <caret line="61" column="35" lean-forward="true" selection-start-line="61" selection-start-column="35" selection-end-line="61" selection-end-column="35" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
