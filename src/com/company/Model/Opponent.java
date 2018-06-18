@@ -2,12 +2,12 @@ package com.company.Model;
 
 public class Opponent extends Player {
 
-    public Opponent() {
-        super();
+    public Opponent(int id) {
+        super(id);
     }
 
-    public Opponent(int score) {
-        super(score);
+    public Opponent(int id,int score) {
+        super(id, score);
     }
 
     @Override
@@ -16,6 +16,6 @@ public class Opponent extends Player {
     }
 
     public Opponent clone() {
-        return new Opponent(this.getScore());
+        return new Opponent(this.getId(), this.getScore());
     }
 }
