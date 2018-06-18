@@ -11,10 +11,12 @@ public class GameState {
     private Board board;
     private MiniMax miniMax;
     private int scores;
+    private boolean timeMode;
     private LinkedList<Set<Arc>> moves;
 
     public GameState(int n, boolean vsHuman, int depthOrTime, boolean time, boolean pruning) {
         moves = new LinkedList<Set<Arc>>();
+        timeMode = time;
         this.board = new Board(n, vsHuman);
         scores = board.scoresCheck();
         if (pruning) {
@@ -78,6 +80,22 @@ public class GameState {
     public void loadBoard(ObjectInputStream ois) throws ClassNotFoundException, IOException {
         board = (Board) ois.readObject();
         ois.close();
+    }
+
+    public int getPlayer1Score() {
+        return board.getPlayer1().getScore();
+    }
+
+    public int getPlayer2Score() {
+        return board.getPlayer2().getScore();
+    }
+
+    public int size() {
+        return board.getN();
+    }
+
+    public boolean isTimeMode() {
+        return timeMode;
     }
 
     public void printTerminal() {

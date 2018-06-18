@@ -91,6 +91,14 @@ public class Board {
         }
     }
 
+    public Player getPlayer1() {
+        return player1;
+    }
+
+    public Player getPlayer2() {
+        return player2;
+    }
+
     private void fillMoves(List<Arc> moves, Player[][] board, int fils, int cols, boolean horizontal) {
         for (int i = 0; i < fils ; i++) {
             for (int j = 0; j < cols; j++) {
