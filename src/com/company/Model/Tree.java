@@ -1,17 +1,14 @@
 package com.company.Model;
 
-import java.util.Iterator;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 public class Tree {
     Board board;
-    List<Tree> children;
+    Set<Tree> children;
 
     public Tree(Board board) {
         this.board = board;
-        this.children = new LinkedList<>();
+        this.children = new HashSet<>();
     }
 /*
     public Tree(Board board, Arc arc, int player) {
@@ -48,4 +45,18 @@ public class Tree {
         putSons(board.getPosibleMoves(), board, 0, -1);
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Tree tree = (Tree) o;
+
+        return board != null ? board.equals(tree.board) : tree.board == null;
+    }
+
+    @Override
+    public int hashCode() {
+        return board != null ? board.hashCode() : 0;
+    }
 }

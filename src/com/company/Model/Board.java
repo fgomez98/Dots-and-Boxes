@@ -1,50 +1,58 @@
 package com.company.Model;
 
-import java.util.HashSet;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
+
 public class Board {
     private final static int ARC = 1;
     private final static int NOARC = 0;
-    private final static int PLAYER1 = 1;
-    private final static int PLAYER2 = -1;
-    private int[][] boxBoard;
-    private int[][] boxHorizontal;
-    private int[][] boxVertical;
-    private int player1Score, player2Score;
+    //private final static int PLAYER1 = 1;
+    //private final static int PLAYER2 = -1;
+    private Player[][] boxBoard;
+    private Player[][] boxHorizontal;
+    private Player[][] boxVertical;
+    private Player player1, player2;
     private int N;
 
-    public Board(int n) {
+    public Board(int n, boolean vsHuman) {
+        player1 = new Player();
+        if (vsHuman) {
+            player1 = new Player();
+        } else {
+            player2 = new Opponent();
+        }
         N = n;
-        boxBoard = new int[N-1][N-1];
-        boxHorizontal = new int[N-1][N];
-        boxVertical = new int[N][N-1];
-        player1Score = 0;
-        player2Score = 0;
-        this.N = N;
+        boxBoard = new Player[N-1][N-1];
+        boxHorizontal = new Player[N-1][N];
+        boxVertical = new Player[N][N-1];
         initBoards(boxBoard, N-1, N-1);
         initBoards(boxHorizontal, N, N-1);
         initBoards(boxVertical, N-1, N);
     }
 
-    public boolean setHEdge(int x, int y, int player){
-        if (boxHorizontal[y][x] == NOARC){
+    public Board(int n) {
+        N = n;
+        boxBoard = new Player[N-1][N-1];
+        boxHorizontal = new Player[N-1][N];
+        boxVertical = new Player[N][N-1];
+        initBoards(boxBoard, N-1, N-1);
+        initBoards(boxHorizontal, N, N-1);
+        initBoards(boxVertical, N-1, N);
+    }
+
+    public Board(int n, Player player1, Player player2) {
+        this.player1 = player1;
+        this.player2 = player2;
+    }
+
+    public boolean setHEdge(int x, int y, Player player){
+        if (boxHorizontal[y][x] == null){
             boxHorizontal[y][x] = player;
-            if(y < N && boxHorizontal[y+1][x] == ARC && boxVertical[y][x] == ARC && boxVertical[y][x+1] == ARC){
-                if(player == 1){
-                    player1Score++;
-                }else{
-                    player2Score++;
-                }
+            if(y < N && boxHorizontal[y+1][x] != null && boxVertical[y][x] != null && boxVertical[y][x+1] != null){
+                player.incScore(1);
                 boxBoard[y][x] = player;
             }
-            if(y > 0 && boxHorizontal[y-1][x] == ARC && boxVertical[y-1][x] == ARC && boxVertical[y-1][x+1] == ARC){
-                if(player == 1){
-                    player1Score++;
-                }else{
-                    player2Score++;
-                }
+            if(y > 0 && boxHorizontal[y-1][x] != null && boxVertical[y-1][x] != null && boxVertical[y-1][x+1] != null){
+               player.incScore(1);
                 boxBoard[y-1][x] = player;
             }
             return true;
@@ -53,23 +61,15 @@ public class Board {
         return false;
     }
 
-    public boolean setVEdge(int x, int y, int player) {
-        if (boxVertical[y][x] == NOARC) {
+    public boolean setVEdge(int x, int y, Player player) {
+        if (boxVertical[y][x] == null) {
             boxVertical[y][x] = player;
-            if (x < N && boxVertical[y][x + 1] == ARC && boxHorizontal[y][x] == ARC && boxHorizontal[y - 1][x] == ARC) {
-                if (player == 1) {
-                    player1Score++;
-                } else {
-                    player2Score++;
-                }
+            if (x < N && boxVertical[y][x + 1] != null && boxHorizontal[y][x] != null && boxHorizontal[y - 1][x] != null) {
+                player.incScore(1);
                 boxBoard[y][x] = player;
             }
-            if (x > 0 && boxVertical[y][x - 1] == ARC && boxHorizontal[y - 1][x - 1] == ARC && boxHorizontal[y][x - 1] == ARC) {
-                if (player == 1) {
-                    player1Score++;
-                } else {
-                    player2Score++;
-                }
+            if (x > 0 && boxVertical[y][x - 1] != null && boxHorizontal[y - 1][x - 1] != null && boxHorizontal[y][x - 1] != null) {
+                player.incScore(1);
                 boxBoard[y][x - 1] = player;
 
             }
@@ -78,15 +78,15 @@ public class Board {
         return false;
     }
 
-    private void initBoards(int[][] board, int fils, int cols) {
+    private void initBoards(Player[][] board, int fils, int cols) {
         for (int i = 0; i < fils; i++) {
             for (int j = 0; j < cols; j++) {
-                board[i][j] = 0;
+                board[i][j] = null;
             }
         }
     }
 
-    private void fillBoard(int[][] dest, int[][] source, int fils, int cols) {
+    private void fillBoard(Player[][] dest, Player[][] source, int fils, int cols) {
         for (int i = 0; i < fils; i++) {
             for (int j = 0; j < cols; j++) {
                 dest[i][j] = source[i][j];
@@ -94,18 +94,18 @@ public class Board {
         }
     }
 
-    private void fillMoves(List<Arc> moves, int[][] board, int fils, int cols) {
+    private void fillMoves(List<Arc> moves, Player[][] board, int fils, int cols) {
         for (int i = 0; i < fils ; i++) {
             for (int j = 0; j < cols; j++) {
-                if (board[i][j] == NOARC) {
-                    moves.add(new Arc(0, i, j));
+                if (board[i][j] == null) {
+                    moves.add(new Arc(null, i, j));
                 }
             }
         }
     }
 
     public int getPlayerScore(int player){
-        return (player == 1)?player1Score:player2Score;
+        return (player == 1)?player1.getScore():player2.getScore();
     }
 
     public List<Arc> getPosibleMoves() {
@@ -120,26 +120,24 @@ public class Board {
     }
 
     public boolean boardComplete() {
-        return (player1Score + player2Score) == Math.pow(N-1, 2);
+        return (player1.getScore()+ player2.getScore()) == Math.pow(N-1, 2);
     }
 
-    public int getWinner() {
-        if (player1Score > player2Score) {
-            return PLAYER1;
-        } else if (player2Score > player1Score) {
-            return PLAYER2;
+    public Player getWinner() {
+        if (player1.getScore() > player2.getScore()) {
+            return player1;
+        } else if (player2.getScore() > player1.getScore()) {
+            return player2;
         } else {
-            return 0;
+            return null;
         }
     }
 
-    protected Board clone() {
-        Board aux = new Board(N);
+    public Board clone() {
+        Board aux = new Board(N, player1.clone(), player2.clone());
         fillBoard(aux.boxHorizontal, this.boxHorizontal,N,N-1);
         fillBoard(aux.boxVertical, this.boxVertical,N-1,N);
         fillBoard(aux.boxBoard, this.boxBoard, N-1, N-1);
-        aux.player1Score = this.player1Score;
-        aux.player2Score = this.player2Score;
         return aux;
     }
 
@@ -155,53 +153,67 @@ public class Board {
         int x = arc.getX();
         int y = arc.getY();
         if(arc.isHorizontal()){
-            if(boxHorizontal[y][x] == NOARC){
+            if(boxHorizontal[y][x] == null){
                 return false;
             }else{
-                if(y < N && boxHorizontal[y+1][x] == ARC && boxVertical[y][x] == ARC && boxVertical[y][x+1] == ARC){
-                    if(boxBoard[y][x] == 1)
-                        player1Score--;
-                    else
-                        player2Score--;
-                    boxBoard[y][x] = 0;
+                if(y < N && boxHorizontal[y+1][x] != null && boxVertical[y][x] != null && boxVertical[y][x+1] != null){
+                    boxBoard[x][y].incScore(-1);
+                    boxBoard[y][x] = null;
 
                 }
-                if(y > 0 && boxHorizontal[y-1][x] == ARC && boxVertical[y-1][x] == ARC && boxVertical[y-1][x+1] == ARC){
-                    if(boxBoard[y-1][x] == 1)
-                        player1Score--;
-                    else
-                        player2Score--;
-                    boxBoard[y-1][x] = 0;
+                if(y > 0 && boxHorizontal[y-1][x] != null && boxVertical[y-1][x] != null && boxVertical[y-1][x+1] != null){
+                    boxBoard[y-1][x].incScore(-1);
+                    boxBoard[y-1][x] = null;
                 }
 
-                boxHorizontal[y][x] = NOARC;
+                boxHorizontal[y][x] = null;
                 return true;
             }
         }else{
-            if (boxVertical[y][x] == NOARC){
+            if (boxVertical[y][x] == null){
                 return false;
             }else{
-                if(x < N && boxVertical[y][x + 1] == ARC && boxHorizontal[y][x] == ARC && boxHorizontal[y - 1][x] == ARC){
-                    if(boxBoard[y][x] == 1)
-                        player1Score--;
-                    else
-                        player2Score--;
-                    boxBoard[y][x] = 0;
+                if(x < N && boxVertical[y][x + 1] != null && boxHorizontal[y][x] != null && boxHorizontal[y - 1][x] != null){
+                    boxBoard[y][x].incScore(-1);
+                    boxBoard[y][x] = null;
                 }
-                if (x > 0 && boxVertical[y][x - 1] == ARC && boxHorizontal[y - 1][x - 1] == ARC && boxHorizontal[y][x - 1] == ARC){
-                    if(boxBoard[y][x-1] == 1)
-                        player1Score--;
-                    else
-                        player2Score--;
-                    boxBoard[y][x-1] = 0;
+                if (x > 0 && boxVertical[y][x - 1] != null && boxHorizontal[y - 1][x - 1] != null && boxHorizontal[y][x - 1] != null){
+                    boxBoard[y][x-1].incScore(-1);
+                    boxBoard[y][x-1] = null;
                 }
-                boxVertical[y][x] = NOARC;
+                boxVertical[y][x] = null;
                 return true;
             }
         }
     }
 
     public int scoresCheck() {
-        return player2Score + player1Score;
+        return player2.getScore() + player1.getScore();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Board board = (Board) o;
+
+        if (N != board.N) return false;
+        if (!Arrays.deepEquals(boxBoard, board.boxBoard)) return false;
+        if (!Arrays.deepEquals(boxHorizontal, board.boxHorizontal)) return false;
+        if (!Arrays.deepEquals(boxVertical, board.boxVertical)) return false;
+        if (player1 != null ? !player1.equals(board.player1) : board.player1 != null) return false;
+        return player2 != null ? player2.equals(board.player2) : board.player2 == null;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = Arrays.deepHashCode(boxBoard);
+        result = 31 * result + Arrays.deepHashCode(boxHorizontal);
+        result = 31 * result + Arrays.deepHashCode(boxVertical);
+        result = 31 * result + (player1 != null ? player1.hashCode() : 0);
+        result = 31 * result + (player2 != null ? player2.hashCode() : 0);
+        result = 31 * result + N;
+        return result;
     }
 }
