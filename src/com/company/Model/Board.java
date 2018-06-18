@@ -5,8 +5,8 @@ import java.util.*;
 public class Board {
     private final static int ARC = 1;
     private final static int NOARC = 0;
-    //private final static int PLAYER1 = 1;
-    //private final static int PLAYER2 = -1;
+    private final static int PLAYER1 = 1;
+    private final static int PLAYER2 = -1;
     private Player[][] boxBoard;
     private Player[][] boxHorizontal;
     private Player[][] boxVertical;
@@ -15,6 +15,7 @@ public class Board {
     private int turn;
 
     public Board(int n) {
+        turn = 0;
         N = n;
         boxBoard = new Player[N-1][N-1];
         boxHorizontal = new Player[N-1][N];
@@ -26,11 +27,11 @@ public class Board {
 
     Board(int n, boolean vsHuman) {
         this(n);
-        player1 = new Player();
+        player1 = new Player(PLAYER1);
         if (vsHuman) {
-            player1 = new Player();
+            player2 = new Player(PLAYER2);
         } else {
-            player2 = new Opponent();
+            player2 = new Opponent(PLAYER2);
         }
     }
 
@@ -185,6 +186,18 @@ public class Board {
 
     public int scoresCheck() {
         return player2.getScore() + player1.getScore();
+    }
+
+    public void nextTurn() {
+        turn = (turn+1)%2;
+    }
+
+    public Player getCurrentPlayer() {
+        if (turn == 0) {
+            return player1;
+        } else {
+            return player2;
+        }
     }
 
     @Override

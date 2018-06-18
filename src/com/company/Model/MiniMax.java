@@ -2,14 +2,13 @@ package com.company.Model;
 
 import org.omg.PortableInterceptor.INACTIVE;
 
-public class MiniMax implements Heuristica {
+public class MiniMax {
 
-    @Override
-    public int evaluate(Board board, int player) {
+    public static int evaluate(Board board, int player) {
         return 0;
     }
 
-    public int minimax(Tree current, int depth, boolean maximaizer, int player, int alpha, int beta) {
+    public static int minimax(Tree current, int depth, boolean maximaizer, int player, int alpha, int beta) {
         if (depth == 0 || current.board.boardComplete()) {
             return evaluate(current.board, player);
         }
@@ -41,14 +40,14 @@ public class MiniMax implements Heuristica {
         }
     }
 
-    public Board bestMove(Board board, int depth, int player) {
+    public static Board bestMove(Board board, int depth, Player player) {
         Tree tree = new Tree(board);
         Board bestBoard = null;
         tree.generateChildren();
         int bestBoardEvaluation = Integer.MIN_VALUE;
         int auxEvaluation = 0;
         for (Tree child : tree.children) {
-            if ((auxEvaluation = minimax(child, depth-1, false, -player, Integer.MIN_VALUE, Integer.MAX_VALUE)) > bestBoardEvaluation) {
+            if ((auxEvaluation = minimax(child, depth-1, false, -player.getId(), Integer.MIN_VALUE, Integer.MAX_VALUE)) > bestBoardEvaluation) {
                 bestBoardEvaluation = auxEvaluation;
                 bestBoard = child.board;
             }
