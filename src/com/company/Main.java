@@ -12,7 +12,7 @@ public class Main {
     static Set<Board> children = new HashSet<>();
 
     public static void main(String[] args) {
-        GameState game = new GameState(3, false, 2, true, true);
+        GameState game = new GameState(3, false, 1, true, true);
         game.printTerminal();
         int i = 10;
         Random rand = new Random();

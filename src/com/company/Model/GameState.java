@@ -3,26 +3,31 @@ package com.company.Model;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Set;
 
 public class GameState {
     private Board board;
     private MiniMax miniMax;
     private int scores;
+    private LinkedList<Set<Arc>> moves;
 
-    public GameState(int n, boolean vsHuman, int depthOrTime, boolean depth, boolean pruning) {
+    public GameState(int n, boolean vsHuman, int depthOrTime, boolean time, boolean pruning) {
+        moves = new LinkedList<Set<Arc>>();
         this.board = new Board(n, vsHuman);
         scores = board.scoresCheck();
         if (pruning) {
-            if (depth) {
-                miniMax = new MiniMaxDP(depthOrTime);
-            } else {
+            if (time) {
                 miniMax = new MiniMaxTP(depthOrTime);
+            } else {
+                miniMax = new MiniMaxDP(depthOrTime);
             }
         } else {
-            if (depth) {
-                miniMax = new MiniMaxD(depthOrTime);
-            } else {
+            if (time) {
                 miniMax = new MiniMaxT(depthOrTime);
+            } else {
+                miniMax = new MiniMaxD(depthOrTime);
             }
         }
     }
@@ -38,11 +43,23 @@ public class GameState {
             }
         } else { //computadora
             System.out.println("compu");
-            board = miniMax.bestMove(board, board.getCurrentPlayer(),board.getNextPlayer());
+            Tree nextMove = miniMax.bestMove2(board, board.getCurrentPlayer(),board.getNextPlayer());
+            board = nextMove.getBoard();
+            moves.addLast(nextMove.getArcs());
             scores = board.scoresCheck();
             board.nextTurn();
             //imprimo el tablero
         }
+    }
+
+    public void undo() {
+        if (moves.size() == 0) {
+            return;
+        }
+        for (Arc arc : moves.removeLast()) {
+            board.removeArc(arc);
+        }
+        scores = board.scoresCheck();
     }
 
     public boolean isWinner() {

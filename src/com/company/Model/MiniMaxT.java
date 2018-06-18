@@ -8,12 +8,12 @@ public class MiniMaxT extends MiniMax {
 
     public int minimax(Tree current, long timeLimit, boolean maximaizer, Player currentPlayer, Player nextPlayer) {
         if (System.currentTimeMillis() == timeLimit) {
-            return evaluate(current.board, current.board.getCurrentPlayer(), currentPlayer);
+            return evaluate(current.getBoard(), current.getBoard().getCurrentPlayer(), currentPlayer);
         }
         if (maximaizer) { //MAXIMIZER
             int maxEvaluation = Integer.MIN_VALUE;
             current.generateChildren();
-            for (Tree child : current.children) {
+            for (Tree child : current.getChildren()) {
                 int auxEvalution = minimax(child, timeLimit, !maximaizer, nextPlayer, currentPlayer); {
                     maxEvaluation = Math.max(maxEvaluation, auxEvalution);
                 }
@@ -22,7 +22,7 @@ public class MiniMaxT extends MiniMax {
         } else { //MINIMIZER
             int minEvaluation = Integer.MAX_VALUE;
             current.generateChildren();
-            for (Tree child : current.children) {
+            for (Tree child : current.getChildren()) {
                 int auxEvaluation = minimax(child, timeLimit, !maximaizer, nextPlayer, currentPlayer);
                 minEvaluation = Math.min(minEvaluation, auxEvaluation);
             }
@@ -37,10 +37,26 @@ public class MiniMaxT extends MiniMax {
         tree.generateChildren();
         int bestBoardEvaluation = Integer.MIN_VALUE;
         int auxEvaluation = 0;
-        for (Tree child : tree.children) {
+        for (Tree child : tree.getChildren()) {
             if ((auxEvaluation = minimax(child, this.getDepthOrTime() + System.currentTimeMillis() , false, nextPlayer, currentPlayer)) > bestBoardEvaluation) {
                 bestBoardEvaluation = auxEvaluation;
-                bestBoard = child.board;
+                bestBoard = child.getBoard();
+            }
+        }
+        return bestBoard;
+    }
+
+    @Override
+    public Tree bestMove2(Board board, Player currentPlayer, Player nextPlayer) {
+        Tree tree = new Tree(board);
+        Tree bestBoard = null;
+        tree.generateChildren();
+        int bestBoardEvaluation = Integer.MIN_VALUE;
+        int auxEvaluation = 0;
+        for (Tree child : tree.getChildren()) {
+            if ((auxEvaluation = minimax(child, this.getDepthOrTime() + System.currentTimeMillis(), false, nextPlayer, currentPlayer)) > bestBoardEvaluation) {
+                bestBoardEvaluation = auxEvaluation;
+                bestBoard = child;
             }
         }
         return bestBoard;

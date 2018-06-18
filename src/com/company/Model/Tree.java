@@ -3,9 +3,9 @@ package com.company.Model;
 import java.util.*;
 
 public class Tree {
-    protected Board board;
-    protected Set<Tree> children;
-    protected Set<Arc> arcs;
+    private Board board;
+    private Set<Tree> children;
+    private Set<Arc> arcs;
 
     public Tree(Board board) {
         this.board = board;
@@ -13,27 +13,26 @@ public class Tree {
         this.arcs = new HashSet<>();
     }
 
-/*
-    public Tree(Board board, Arc arc, int player) {
-        int currentScore = board.getPlayerScore(player);
-        board.addArc(arc);
-        List<Arc> arcSet = board.getPosibleMoves();
-        putSons(arcSet, board.clone(), 0);
+    public Tree(Board board, Set<Arc> arcs) {
+        this.board = board;
+        this.arcs = arcs;
+        this.children = new HashSet<>();
     }
-*/
 
-    private void putSons(List<Arc> arcList, Board board, int index, int prevScore) {
+    private void putSons(List<Arc> posibleMoves, Board board, int index, int prevScore, LinkedList<Arc> arcsAdedd) {
         if (prevScore == board.scoresCheck()) { //los scores siguen iguales no puede realizar mas movimientos
-            children.add(new Tree(board.clone()));
+            children.add(new Tree(board.clone(), new HashSet<>(arcsAdedd)));
             return;
         }
         int currentScore = board.scoresCheck();
-        for (int i = index; i < arcList.size(); i++) {
-            swap(arcList, i, index);
-            board.addArc(arcList.get(index));
-            putSons(arcList, board, index+1, currentScore);
-            board.removeArc(arcList.get(index));
-            swap(arcList, i, index);
+        for (int i = index; i < posibleMoves.size(); i++) {
+            swap(posibleMoves, i, index);
+            board.addArc(posibleMoves.get(index));
+            arcsAdedd.addLast(posibleMoves.get(index));
+            putSons(posibleMoves, board, index+1, currentScore, arcsAdedd);
+            board.removeArc(posibleMoves.get(index));
+            arcsAdedd.removeLast();
+            swap(posibleMoves, i, index);
         }
         return;
     }
@@ -49,7 +48,19 @@ public class Tree {
     }
 
     public void generateChildren() {
-        putSons(board.getPosibleMoves(), board, 0, -1);
+        putSons(board.getPosibleMoves(), board, 0, -1, new LinkedList<Arc>());
+    }
+
+    public Board getBoard() {
+        return board;
+    }
+
+    public Set<Tree> getChildren() {
+        return children;
+    }
+
+    public Set<Arc> getArcs() {
+        return arcs;
     }
 
     @Override

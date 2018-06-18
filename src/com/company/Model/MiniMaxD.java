@@ -8,13 +8,13 @@ public class MiniMaxD extends MiniMax {
     }
 
     public int minimax(Tree current, int depth, boolean maximaizer, Player currentPlayer, Player nextPlayer) {
-        if (depth == 0 || current.board.boardComplete()) {
-            return evaluate(current.board, current.board.getCurrentPlayer(), currentPlayer);
+        if (depth == 0 || current.getBoard().boardComplete()) {
+            return evaluate(current.getBoard(), current.getBoard().getCurrentPlayer(), currentPlayer);
         }
         if (maximaizer) { //MAXIMIZER
             int maxEvaluation = Integer.MIN_VALUE;
             current.generateChildren();
-            for (Tree child : current.children) {
+            for (Tree child : current.getChildren()) {
                 int auxEvalution = minimax(child, depth-1, !maximaizer, nextPlayer, currentPlayer); {
                     maxEvaluation = Math.max(maxEvaluation, auxEvalution);
                 }
@@ -23,7 +23,7 @@ public class MiniMaxD extends MiniMax {
         } else { //MINIMIZER
             int minEvaluation = Integer.MAX_VALUE;
             current.generateChildren();
-            for (Tree child : current.children) {
+            for (Tree child : current.getChildren()) {
                 int auxEvaluation = minimax(child, depth-1, !maximaizer, nextPlayer, currentPlayer);
                 minEvaluation = Math.min(minEvaluation, auxEvaluation);
             }
@@ -38,28 +38,28 @@ public class MiniMaxD extends MiniMax {
         tree.generateChildren();
         int bestBoardEvaluation = Integer.MIN_VALUE;
         int auxEvaluation = 0;
-        for (Tree child : tree.children) {
+        for (Tree child : tree.getChildren()) {
             if ((auxEvaluation = minimax(child, this.getDepthOrTime()-1, false, nextPlayer, currentPlayer)) > bestBoardEvaluation) {
                 bestBoardEvaluation = auxEvaluation;
-                bestBoard = child.board;
+                bestBoard = child.getBoard();
             }
         }
         return bestBoard;
     }
 
-   /* @Override
-    public Set<Arc> bestMove2(Board board, Player currentPlayer, Player nextPlayer) {
+    @Override
+    public Tree bestMove2(Board board, Player currentPlayer, Player nextPlayer) {
         Tree tree = new Tree(board);
-        Board bestBoard = null;
+        Tree bestBoard = null;
         tree.generateChildren();
         int bestBoardEvaluation = Integer.MIN_VALUE;
         int auxEvaluation = 0;
-        for (Tree child : tree.children) {
+        for (Tree child : tree.getChildren()) {
             if ((auxEvaluation = minimax(child, this.getDepthOrTime()-1, false, nextPlayer, currentPlayer)) > bestBoardEvaluation) {
                 bestBoardEvaluation = auxEvaluation;
-                bestBoard = child.board;
+                bestBoard = child;
             }
         }
         return bestBoard;
-    }*/
+    }
 }

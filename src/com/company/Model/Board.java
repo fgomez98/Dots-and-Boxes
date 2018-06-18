@@ -241,6 +241,8 @@ public class Board {
         o-o-o-o-o
         | | | | |
         o-o-o-o-o
+        | | | | |
+        o-o-o-o-o
 
          */
     public void printBoard() {

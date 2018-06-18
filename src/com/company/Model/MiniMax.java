@@ -12,7 +12,7 @@ public abstract class MiniMax {
 
     public abstract Board bestMove(Board board, Player currentPlayer, Player nextPlayer);
 
-    //public abstract Set<Arc> bestMove2(Board board, Player currentPlayer, Player nextPlayer);
+    public abstract Tree bestMove2(Board board, Player currentPlayer, Player nextPlayer);
 
     public int evaluate(Board board, Player actualPlayer, Player lastPlayer) {
         return actualPlayer.getScore() - lastPlayer.getScore();
