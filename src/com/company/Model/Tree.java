@@ -3,13 +3,16 @@ package com.company.Model;
 import java.util.*;
 
 public class Tree {
-    Board board;
-    Set<Tree> children;
+    protected Board board;
+    protected Set<Tree> children;
+    protected Set<Arc> arcs;
 
     public Tree(Board board) {
         this.board = board;
         this.children = new HashSet<>();
+        this.arcs = new HashSet<>();
     }
+
 /*
     public Tree(Board board, Arc arc, int player) {
         int currentScore = board.getPlayerScore(player);
@@ -18,17 +21,21 @@ public class Tree {
         putSons(arcSet, board.clone(), 0);
     }
 */
-    private void putSons(List<Arc> arcList, Board board, int index, int currentScores) {
-        if (currentScores == board.scoresCheck()) { //los scores siguen iguales no puede realizar mas movimientos
+
+    private void putSons(List<Arc> arcList, Board board, int index, int prevScore) {
+        if (prevScore == board.scoresCheck()) { //los scores siguen iguales no puede realizar mas movimientos
             children.add(new Tree(board.clone()));
+            return;
         }
+        int currentScore = board.scoresCheck();
         for (int i = index; i < arcList.size(); i++) {
             swap(arcList, i, index);
             board.addArc(arcList.get(index));
-            putSons(arcList, board, index+1, currentScores);
+            putSons(arcList, board, index+1, currentScore);
             board.removeArc(arcList.get(index));
             swap(arcList, i, index);
         }
+        return;
     }
 
     public void swap(List<Arc> list, int i, int j) {

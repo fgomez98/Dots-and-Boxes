@@ -21,36 +21,36 @@ public class Board {
         boxHorizontal = new Player[N-1][N];
         boxVertical = new Player[N][N-1];
         initBoards(boxBoard, N-1, N-1);
-        initBoards(boxHorizontal, N, N-1);
-        initBoards(boxVertical, N-1, N);
+        initBoards(boxHorizontal, N-1, N);
+        initBoards(boxVertical, N, N-1);
     }
 
-    Board(int n, boolean vsHuman) {
+    public Board(int n, boolean vsHuman) {
         this(n);
-        player1 = new Player(PLAYER1);
+        player1 = new Player(0);
         if (vsHuman) {
-            player2 = new Player(PLAYER2);
+            player2 = new Player(0);
         } else {
-            player2 = new Opponent(PLAYER2);
+            player2 = new Opponent(0);
         }
     }
 
-    Board(int n, Player player1, Player player2) {
+    public Board(int n, Player player1, Player player2) {
         this(n);
         this.player1 = player1;
         this.player2 = player2;
     }
 
     public boolean setHEdge(int x, int y, Player player){
-        if (boxHorizontal[y][x] == null){
-            boxHorizontal[y][x] = player;
-            if(y < N && boxHorizontal[y+1][x] != null && boxVertical[y][x] != null && boxVertical[y][x+1] != null){
+        if (boxHorizontal[x][y] == null){
+            boxHorizontal[x][y] = player;
+            if(y < (N-1) && boxHorizontal[x][y+1] != null && boxVertical[y][x] != null && boxVertical[x+1][y] != null){
                 player.incScore(1);
-                boxBoard[y][x] = player;
+                boxBoard[x][y] = player;
             }
-            if(y > 0 && boxHorizontal[y-1][x] != null && boxVertical[y-1][x] != null && boxVertical[y-1][x+1] != null){
+            if(y > 0 && x < (N-1)&& boxHorizontal[x][y-1] != null && boxVertical[x][y-1] != null && boxVertical[x+1][y-1] != null){
                player.incScore(1);
-                boxBoard[y-1][x] = player;
+                boxBoard[x][y-1] = player;
             }
             return true;
 
@@ -59,15 +59,15 @@ public class Board {
     }
 
     public boolean setVEdge(int x, int y, Player player) {
-        if (boxVertical[y][x] == null) {
-            boxVertical[y][x] = player;
-            if (x < N && boxVertical[y][x + 1] != null && boxHorizontal[y][x] != null && boxHorizontal[y - 1][x] != null) {
+        if (boxVertical[x][y] == null) {
+            boxVertical[x][y] = player;
+            if (x < (N-1) && (boxVertical[x+1][y] != null && boxHorizontal[x][y] != null && boxHorizontal[x][y+1] != null)) {
                 player.incScore(1);
-                boxBoard[y][x] = player;
+                boxBoard[x][y] = player;
             }
-            if (x > 0 && boxVertical[y][x - 1] != null && boxHorizontal[y - 1][x - 1] != null && boxHorizontal[y][x - 1] != null) {
+            if (x > 0 && (boxVertical[x-1][y] != null && boxHorizontal[x- 1][y + 1] != null && boxHorizontal[x-1][y] != null)) {
                 player.incScore(1);
-                boxBoard[y][x - 1] = player;
+                boxBoard[x-1][y] = player;
 
             }
             return true;
@@ -91,11 +91,11 @@ public class Board {
         }
     }
 
-    private void fillMoves(List<Arc> moves, Player[][] board, int fils, int cols) {
+    private void fillMoves(List<Arc> moves, Player[][] board, int fils, int cols, boolean horizontal) {
         for (int i = 0; i < fils ; i++) {
             for (int j = 0; j < cols; j++) {
                 if (board[i][j] == null) {
-                    moves.add(new Arc(null, i, j));
+                    moves.add(new Arc(getCurrentPlayer(), i, j, horizontal));
                 }
             }
         }
@@ -107,8 +107,8 @@ public class Board {
 
     public List<Arc> getPosibleMoves() {
         List<Arc> moves = new LinkedList<>();
-        fillMoves(moves, boxHorizontal, N-1, N);
-        fillMoves(moves, boxVertical, N, N-1);
+        fillMoves(moves, boxHorizontal, N-1, N, true);
+        fillMoves(moves, boxVertical, N, N-1, false);
         return moves;
     }
 
@@ -132,9 +132,10 @@ public class Board {
 
     public Board clone() {
         Board aux = new Board(N, player1.clone(), player2.clone());
-        fillBoard(aux.boxHorizontal, this.boxHorizontal,N,N-1);
-        fillBoard(aux.boxVertical, this.boxVertical,N-1,N);
+        fillBoard(aux.boxHorizontal, this.boxHorizontal, N-1,N);
+        fillBoard(aux.boxVertical, this.boxVertical,N,N-1);
         fillBoard(aux.boxBoard, this.boxBoard, N-1, N-1);
+        aux.turn = this.turn;
         return aux;
     }
 
@@ -150,35 +151,33 @@ public class Board {
         int x = arc.getX();
         int y = arc.getY();
         if(arc.isHorizontal()){
-            if(boxHorizontal[y][x] == null){
+            if(boxHorizontal[x][y] == null){
                 return false;
-            }else{
-                if(y < N && boxHorizontal[y+1][x] != null && boxVertical[y][x] != null && boxVertical[y][x+1] != null){
+            } else {
+                if(y < (N-1) && boxHorizontal[x][y+1] != null && boxVertical[y][x] != null && boxVertical[x+1][y] != null){
                     boxBoard[x][y].incScore(-1);
-                    boxBoard[y][x] = null;
-
+                    boxBoard[x][y] = null;
                 }
-                if(y > 0 && boxHorizontal[y-1][x] != null && boxVertical[y-1][x] != null && boxVertical[y-1][x+1] != null){
-                    boxBoard[y-1][x].incScore(-1);
-                    boxBoard[y-1][x] = null;
+                if(y > 0 && x > 0 && boxHorizontal[x][y-1] != null && boxVertical[x][y-1] != null && boxVertical[x+1][y-1] != null){
+                    boxBoard[x][y-1].incScore(-1);
+                    boxBoard[x][y-1] = null;
                 }
-
-                boxHorizontal[y][x] = null;
+                boxHorizontal[x][y] = null;
                 return true;
             }
-        }else{
-            if (boxVertical[y][x] == null){
+        } else {
+            if (boxVertical[x][y] == null){
                 return false;
-            }else{
-                if(x < N && boxVertical[y][x + 1] != null && boxHorizontal[y][x] != null && boxHorizontal[y - 1][x] != null){
-                    boxBoard[y][x].incScore(-1);
-                    boxBoard[y][x] = null;
+            } else{
+                if(x < (N-1) && (boxVertical[x+1][y] != null && boxHorizontal[x][y] != null && boxHorizontal[x][y+1] != null)){
+                    boxBoard[x][y].incScore(-1);
+                    boxBoard[x][y] = null;
                 }
-                if (x > 0 && boxVertical[y][x - 1] != null && boxHorizontal[y - 1][x - 1] != null && boxHorizontal[y][x - 1] != null){
-                    boxBoard[y][x-1].incScore(-1);
-                    boxBoard[y][x-1] = null;
+                if (x > 0 && (boxVertical[x-1][y] != null && boxHorizontal[x- 1][y + 1] != null && boxHorizontal[x-1][y] != null)){
+                    boxBoard[x-1][y].incScore(-1);
+                    boxBoard[x-1][y] = null;
                 }
-                boxVertical[y][x] = null;
+                boxVertical[x][y] = null;
                 return true;
             }
         }
@@ -200,6 +199,15 @@ public class Board {
         }
     }
 
+    public Player getNextPlayer() {
+        if (turn == 0) {
+            return player2;
+        } else {
+            return player1;
+        }
+    }
+
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -208,6 +216,7 @@ public class Board {
         Board board = (Board) o;
 
         if (N != board.N) return false;
+        if (turn != board.turn) return false;
         if (!Arrays.deepEquals(boxBoard, board.boxBoard)) return false;
         if (!Arrays.deepEquals(boxHorizontal, board.boxHorizontal)) return false;
         if (!Arrays.deepEquals(boxVertical, board.boxVertical)) return false;
@@ -223,6 +232,38 @@ public class Board {
         result = 31 * result + (player1 != null ? player1.hashCode() : 0);
         result = 31 * result + (player2 != null ? player2.hashCode() : 0);
         result = 31 * result + N;
+        result = 31 * result + turn;
         return result;
+    }
+
+    /*
+
+        o-o-o-o-o
+        | | | | |
+        o-o-o-o-o
+
+         */
+    public void printBoard() {
+        for (int i = 0; i < N; i++) {
+            //imprimo horizontal
+            for (int j = 0; j < N; j++) {
+                System.out.print("o"); // los o son puntos en el tablero
+                if ((i<(N-1)) && boxHorizontal[i][j] != null) {
+                    System.out.print("-");
+                } else {
+                    System.out.print(" ");
+                }
+            }
+            System.out.println();
+            //imprimo vertical
+            for (int j = 0; j < N-1 ; j++) {
+                if (boxVertical[i][j] != null) {
+                    System.out.print("| ");
+                } else {
+                    System.out.print("  ");
+                }
+            }
+            System.out.println();
+        }
     }
 }

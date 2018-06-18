@@ -2,22 +2,10 @@ package com.company.Model;
 
 public class Player implements Cloneable{
     private int score;
-    private int id;
    // private String name;
     //color
 
-    public Player(int id) {
-        this.score = 0;
-        this.id = id;
-
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public Player(int id, int score) {
-        this(id);
+    public Player(int score) {
         this.score = score;
     }
 
@@ -51,10 +39,5 @@ public class Player implements Cloneable{
     public int hashCode() {
         return score;
     }
-
-/* public String getName() {
-        return name;
-    }
-    */
 
 }

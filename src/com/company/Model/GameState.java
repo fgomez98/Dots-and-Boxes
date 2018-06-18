@@ -1,50 +1,71 @@
 package com.company.Model;
 
-import com.company.Model.Board;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 
 public class GameState {
-
     private Board board;
-    private Player currentPlayer;
-    private int difficulty;
+    private MiniMax miniMax;
+    private int scores;
 
-
-    public GameState(int n, boolean vsHuman, int difficulty) {
+    public GameState(int n, boolean vsHuman, int depthOrTime, boolean depth, boolean pruning) {
         this.board = new Board(n, vsHuman);
-        currentPlayer = board.getCurrentPlayer();
-        this.difficulty = difficulty;
+        scores = board.scoresCheck();
+        if (pruning) {
+            if (depth) {
+                miniMax = new MiniMaxDP(depthOrTime);
+            } else {
+                miniMax = new MiniMaxTP(depthOrTime);
+            }
+        } else {
+            if (depth) {
+                miniMax = new MiniMaxD(depthOrTime);
+            } else {
+                miniMax = new MiniMaxT(depthOrTime);
+            }
+        }
     }
 
-    public void handelInput(int x, int y) {
-        if (currentPlayer.isHuman()) {
-            if (board.addArc(new Arc(currentPlayer, x,y))) {
-                board.nextTurn();
+    public void handelInput(int x, int y, boolean horizontal) { // le retorna al View el tablero que tiene que imprimir en pantalla
+        if (board.getCurrentPlayer().isHuman()) {
+            System.out.println("humano");
+            if (board.addArc(new Arc(board.getCurrentPlayer(), x,y, horizontal))) { // los arcos pueden ser horizontales o veritcales
+                if (scores == board.scoresCheck()) { // si es distinto el humano completo un casillero, gana un turno
+                    board.nextTurn();
+                }
                 //imprimo el tablero
             }
         } else { //computadora
-            board = MiniMax.bestMove(board, difficulty, currentPlayer);
+            System.out.println("compu");
+            board = miniMax.bestMove(board, board.getCurrentPlayer(),board.getNextPlayer());
+            scores = board.scoresCheck();
             board.nextTurn();
             //imprimo el tablero
         }
     }
 
-    //Para entrar aca, si o si tengo que verificar si tengo jugadas disponibles
-    public boolean setPlayer(Arc arc, Player player){
-        int points = player.getScore();
-        while(arc.isHorizontal()? board.setHEdge(arc.getX(),arc.getY(), player):board.setVEdge(arc.getX(),arc.getY(), player)){
-                if(points != player.getScore()){
-                    return true;
-                }
-            }
-        return false;
+    public boolean isWinner() {
+        return board.boardComplete();
+    }
+
+    public Player getWinner() {
+        return board.getWinner();
+    }
+
+    public void saveBoard(ObjectOutputStream out) throws IOException {
+        out.writeObject(board);
+        out.close();
+    }
+
+    public void loadBoard(ObjectInputStream ois) throws ClassNotFoundException, IOException {
+        board = (Board) ois.readObject();
+        ois.close();
+    }
+
+    public void printTerminal() {
+        board.printBoard();
     }
 
 
-/*
-    public int finished(){
-        if (board.boardComplete())
-            return board.getWinner();
-        return 2;//porque no es ni uno ni -1, o sea, no termino
-    }
-    */
 }

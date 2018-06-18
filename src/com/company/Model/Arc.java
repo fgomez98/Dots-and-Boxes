@@ -21,6 +21,13 @@ public class Arc {
         this.y = y;
     }
 
+    public Arc(Player player, int x, int y, boolean horizontal) {
+        this.player = player;
+        this.x = x;
+        this.y = y;
+        this.horizontal = horizontal;
+    }
+
     public Player getPlayer() {
         return player;
     }
