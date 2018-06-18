@@ -1,5 +1,4 @@
 package com.company.Model;
-import com.company.Model.*;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Random;
@@ -10,25 +9,26 @@ public class Main2 {
     static Set<Board> children = new HashSet<>();
 
     public static void main(String[] args) {
-        GameState game = new GameState(3, false, 6, false, true);
+        int N = 4;
+        GameState game = new GameState(N, 1, 4, false, true);
         int i = 50;
         Random rand = new Random();
         game.printTerminal();
         while ((i--) > 0) {
-            int x = rand.nextInt(2);
-            int y = rand.nextInt(2);
+            int x = rand.nextInt(N-1);
+            int y = rand.nextInt(N-1);
             boolean horizontal = true;
             if (rand.nextInt(2) != 0) {
                 horizontal = false;
             }
             if (horizontal) {
-                if (x < 2) {
+                if (x < N-1) {
                     System.out.println("horizontal: " + horizontal + " x: " + x + "y: " +y);
                     game.handelInput(x, y, horizontal);
                     game.printTerminal();
                 }
             } else {
-                if (y < 2) {
+                if (y < N-1) {
                     System.out.println("horizontal: " + horizontal + " x: " + x + "y: " +y);
                     game.handelInput(x, y, horizontal);
                     game.printTerminal();

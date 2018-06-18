@@ -14,10 +14,10 @@ public class GameState {
     private boolean timeMode;
     private LinkedList<Set<Arc>> moves;
 
-    public GameState(int n, boolean vsHuman, int depthOrTime, boolean time, boolean pruning) {
-        moves = new LinkedList<Set<Arc>>();
+    public GameState(int n, int mode, int depthOrTime, boolean time, boolean pruning) {
+        moves = new LinkedList<>();
         timeMode = time;
-        this.board = new Board(n, vsHuman);
+        this.board = new Board(n, mode);
         scores = board.scoresCheck();
         if (pruning) {
             if (time) {

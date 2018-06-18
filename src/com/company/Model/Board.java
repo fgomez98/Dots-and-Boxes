@@ -21,14 +21,6 @@ public class Board implements Serializable {
     public Board(int n) {
         turn = 0;
         N = n;
-        /*
-        boxBoard = new Player[N-1][N-1];
-        boxHorizontal = new Player[N-1][N];
-        boxVertical = new Player[N][N-1];
-        initBoards(boxBoard, N-1, N-1);
-        initBoards(boxHorizontal, N-1, N);
-        initBoards(boxVertical, N, N-1);
-        */
         boxBoard = new Player[N-1][N-1];
         boxHorizontal = new Player[N][N-1];
         boxVertical = new Player[N-1][N];
@@ -37,13 +29,25 @@ public class Board implements Serializable {
         initBoards(boxVertical, N-1, N);
     }
 
-    public Board(int n, boolean vsHuman) {
+    public Board(int n, int mode) {
         this(n);
         player1 = new Player(0,1);
-        if (vsHuman) {
-            player2 = new Player(0,-1);
-        } else {
-            player2 = new Opponent(0,-1);
+        switch (mode) {
+            case 0:
+                player1 = new Player(0, 1);
+                player2 = new Player(0, 2);
+                break;
+            case 1:
+                player1 = new Opponent(0, 1);
+                player2 = new Player(0,2);
+                break;
+            case 2:
+                player2 = new Opponent(0, 2);
+                player1 = new Player(0,1);
+                break;
+            case 3:
+                player1 = new Opponent(0, 1);
+                player2 = new Opponent(0, 2);
         }
     }
 
