@@ -108,7 +108,7 @@ public class Tree {
     }
 
     public void export() {
-        File fpw = new File("/Users/fermingomez/Desktop/graph.dot");
+        File fpw = new File("graph.dot");
         try {
             FileWriter fw = new FileWriter(fpw);
             fw.write("digraph {\n");
