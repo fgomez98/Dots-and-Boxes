@@ -1,34 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="16b9cbda-983e-478e-bfdb-887447678567" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/Dots-and-Boxes.iml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Dots and Boxes/com/company/Controller/PaneController.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Dots and Boxes/com/company/Main.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Dots and Boxes/com/company/Model/Arc.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Dots and Boxes/com/company/Model/Board.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Dots and Boxes/com/company/Model/GameState.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Dots and Boxes/com/company/Model/Main2.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Dots and Boxes/com/company/Model/MiniMax.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Dots and Boxes/com/company/Model/MiniMaxD.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Dots and Boxes/com/company/Model/MiniMaxDP.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Dots and Boxes/com/company/Model/MiniMaxT.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Dots and Boxes/com/company/Model/MiniMaxTP.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Dots and Boxes/com/company/Model/Opponent.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Dots and Boxes/com/company/Model/Player.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Dots and Boxes/com/company/Model/Tree.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Dots and Boxes/com/company/pane.fxml" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Dots-and-Boxes/com/company/Controller/PaneController.class" afterPath="$PROJECT_DIR$/out/production/Dots-and-Boxes/com/company/Controller/PaneController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Dots-and-Boxes/com/company/Main.class" afterPath="$PROJECT_DIR$/out/production/Dots-and-Boxes/com/company/Main.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/Controller/PaneController.java" afterPath="$PROJECT_DIR$/src/com/company/Controller/PaneController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/Model/Arc.java" afterPath="$PROJECT_DIR$/src/com/company/Model/Arc.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/Model/Board.java" afterPath="$PROJECT_DIR$/src/com/company/Model/Board.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/Model/GameState.java" afterPath="$PROJECT_DIR$/src/com/company/Model/GameState.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/Model/Main2.java" afterPath="$PROJECT_DIR$/src/com/company/Model/Main2.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/Model/MiniMax.java" afterPath="$PROJECT_DIR$/src/com/company/Model/MiniMax.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/Model/Player.java" afterPath="$PROJECT_DIR$/src/com/company/Model/Player.java" />
+    <list default="true" id="159ad32c-226b-4451-9f29-9176a934262c" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/Dots and Boxes.iml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/production/Dots and Boxes/com/company/Controller/PaneController$1.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/production/Dots and Boxes/com/company/Controller/PaneController$RectangleEvent.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/production/Dots and Boxes/com/company/Model/Arc.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/production/Dots and Boxes/com/company/Model/Board.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/production/Dots and Boxes/com/company/Model/GameState.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/production/Dots and Boxes/com/company/Model/Main2.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/production/Dots and Boxes/com/company/Model/MiniMax.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/production/Dots and Boxes/com/company/Model/MiniMaxD.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/production/Dots and Boxes/com/company/Model/MiniMaxDP.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/production/Dots and Boxes/com/company/Model/MiniMaxT.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/production/Dots and Boxes/com/company/Model/MiniMaxTP.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/production/Dots and Boxes/com/company/Model/Opponent.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/production/Dots and Boxes/com/company/Model/Player.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/production/Dots and Boxes/com/company/Model/Tree.class" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/out/production/Dots-and-Boxes/com/company/Controller/PaneController$1.class" afterPath="$PROJECT_DIR$/out/production/Dots-and-Boxes/com/company/Controller/PaneController$1.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/Dots-and-Boxes/com/company/Controller/PaneController$RectangleEvent.class" afterPath="$PROJECT_DIR$/out/production/Dots-and-Boxes/com/company/Controller/PaneController$RectangleEvent.class" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/Controller/PaneController.java" afterPath="$PROJECT_DIR$/src/com/company/Controller/PaneController.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -38,57 +30,28 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/Dots_and_Boxes$Main.coverage" NAME="Main Coverage Results" MODIFIED="1529357016947" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.company.*</FILTER>
+    </SUITE>
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Main2.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/com/company/Model/Main2.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="121">
-              <caret line="11" column="17" lean-forward="false" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GameState.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/company/Model/GameState.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="495">
-              <caret line="39" column="5" lean-forward="true" selection-start-line="39" selection-start-column="5" selection-end-line="39" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="PaneController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/company/Controller/PaneController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="310">
-              <caret line="139" column="31" lean-forward="false" selection-start-line="139" selection-start-column="31" selection-end-line="139" selection-end-column="31" />
+            <state relative-caret-position="872">
+              <caret line="77" column="0" lean-forward="false" selection-start-line="77" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Arc.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/company/Model/Arc.java">
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/company/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="400">
-              <caret line="91" column="27" lean-forward="false" selection-start-line="91" selection-start-column="27" selection-end-line="91" selection-end-column="27" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Player.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/company/Model/Player.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="203">
-              <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="50" selection-end-column="5" />
+            <state relative-caret-position="420">
+              <caret line="132" column="0" lean-forward="false" selection-start-line="132" selection-start-column="0" selection-end-line="132" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -97,58 +60,64 @@
       <file leaf-file-name="Board.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/company/Model/Board.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="265">
-              <caret line="332" column="20" lean-forward="false" selection-start-line="332" selection-start-column="20" selection-end-line="332" selection-end-column="20" />
+            <state relative-caret-position="180">
+              <caret line="13" column="4" lean-forward="false" selection-start-line="13" selection-start-column="4" selection-end-line="13" selection-end-column="32" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MiniMaxDP.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/company/Model/MiniMaxDP.java">
+      <file leaf-file-name="GameState.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/company/Model/GameState.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+            <state relative-caret-position="397">
+              <caret line="39" column="5" lean-forward="false" selection-start-line="39" selection-start-column="5" selection-end-line="39" selection-end-column="5" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MiniMaxT.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/company/Model/MiniMaxT.java">
+      <file leaf-file-name="pane.fxml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/company/pane.fxml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+            <state relative-caret-position="220">
+              <caret line="11" column="40" lean-forward="false" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="40" />
               <folding />
             </state>
           </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MiniMaxTP.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/company/Model/MiniMaxTP.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MiniMax.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/company/Model/MiniMax.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="190">
-              <caret line="31" column="19" lean-forward="true" selection-start-line="31" selection-start-column="19" selection-end-line="31" selection-end-column="19" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
+          <provider editor-type-id="JavaFX-Scene-Builder">
+            <state />
           </provider>
         </entry>
       </file>
     </leaf>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>1</find>
+      <find>-1</find>
+      <find>hola</find>
+      <find>player1Name</find>
+      <find>@</find>
+      <find>listLoader</find>
+      <find>aux</find>
+      <find>vLines</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>paneLoader</replace>
+      <replace>arg</replace>
+      <replace>gameSta</replace>
+    </replaceStrings>
+  </component>
   <component name="Git.Settings">
+    <option name="UPDATE_TYPE" value="MERGE" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GradleLocalSettings">
@@ -159,13 +128,17 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/com/company/Model/GameState.java" />
-        <option value="$PROJECT_DIR$/src/com/company/Controller/PaneController.java" />
-        <option value="$PROJECT_DIR$/src/com/company/Model/Arc.java" />
-        <option value="$PROJECT_DIR$/src/com/company/Model/Player.java" />
+        <option value="$PROJECT_DIR$/src/com/company/Model/Tree.java" />
         <option value="$PROJECT_DIR$/src/com/company/Model/Board.java" />
+        <option value="$PROJECT_DIR$/src/com/company/View/Canvas.java" />
+        <option value="$PROJECT_DIR$/src/com/company/View/Untitled.fxml" />
         <option value="$PROJECT_DIR$/src/com/company/Model/MiniMax.java" />
-        <option value="$PROJECT_DIR$/src/com/company/Model/Main2.java" />
+        <option value="$PROJECT_DIR$/src/com/company/pane.fxml" />
+        <option value="$PROJECT_DIR$/src/com/company/Controller/GameState.java" />
+        <option value="$PROJECT_DIR$/src/com/company/Model/GameState.java" />
+        <option value="$PROJECT_DIR$/src/com/company/Model/MiniMaxDP.java" />
+        <option value="$PROJECT_DIR$/src/com/company/Controller/PaneController.java" />
+        <option value="$PROJECT_DIR$/src/com/company/Main.java" />
       </list>
     </option>
   </component>
@@ -176,10 +149,9 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="5" />
-    <option name="y" value="24" />
-    <option name="width" value="1423" />
-    <option name="height" value="792" />
+    <option name="y" value="23" />
+    <option name="width" value="1440" />
+    <option name="height" value="873" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -196,19 +168,15 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
+      <pane id="Scope" />
       <pane id="Scratches" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="Dots-and-Boxes" type="b2602c69:ProjectViewProjectNode" />
               <item name="Dots-and-Boxes" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Dots-and-Boxes" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Dots-and-Boxes" type="462c0819:PsiDirectoryNode" />
-              <item name=".idea" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Dots-and-Boxes" type="b2602c69:ProjectViewProjectNode" />
@@ -239,16 +207,164 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
+      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/com/company" />
+    </key>
+  </component>
+  <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
+    <UpdatedFiles>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Updated from server" />
+        <option name="myStatusName" value="Changed on server" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="CHANGED_ON_SERVER" />
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Updated" />
+          <option name="myStatusName" value="Changed" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="UPDATED" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/.DS_Store</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/.idea/modules.xml</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/.idea/workspace.xml</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/Dots-and-Boxes/com/company/Controller/PaneController.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/Dots-and-Boxes/com/company/Main.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/com/company/Controller/PaneController.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/com/company/Model/Arc.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/com/company/Model/Board.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/com/company/Model/GameState.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/com/company/Model/Main2.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/com/company/Model/MiniMax.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/com/company/Model/MiniMaxDP.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/com/company/Model/Player.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/com/company/Model/Tree.java</PATH>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Created" />
+          <option name="myStatusName" value="Created" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="CREATED" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/.idea/Dots-and-Boxes.iml</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/Dots-and-Boxes/com/company/Controller/PaneController$1.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/Dots-and-Boxes/com/company/Controller/PaneController$RectangleEvent.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/Dots-and-Boxes/com/company/Model/Arc.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/Dots-and-Boxes/com/company/Model/Board.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/Dots-and-Boxes/com/company/Model/GameState.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/Dots-and-Boxes/com/company/Model/Main2.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/Dots-and-Boxes/com/company/Model/MiniMax.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/Dots-and-Boxes/com/company/Model/MiniMaxD.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/Dots-and-Boxes/com/company/Model/MiniMaxDP.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/Dots-and-Boxes/com/company/Model/MiniMaxT.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/Dots-and-Boxes/com/company/Model/MiniMaxTP.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/Dots-and-Boxes/com/company/Model/Opponent.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/Dots-and-Boxes/com/company/Model/Player.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/Dots-and-Boxes/com/company/Model/Tree.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/Dots-and-Boxes/com/company/pane.fxml</PATH>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Deleted" />
+          <option name="myStatusName" value="Deleted" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="true" />
+          <option name="myId" value="REMOVED_FROM_REPOSITORY" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/Dots and Boxes/com/company/Controller/PaneController.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/Dots and Boxes/com/company/Main.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/Dots and Boxes/com/company/pane.fxml</PATH>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Restored" />
+          <option name="myStatusName" value="Will be restored" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="RESTORED" />
+        </FILE-GROUP>
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Modified" />
+        <option name="myStatusName" value="Modified" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MODIFIED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Skipped" />
+        <option name="myStatusName" value="Skipped" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SKIPPED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with conflicts" />
+        <option name="myStatusName" value="Will be merged with conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_CONFLICTS" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with tree conflicts" />
+        <option name="myStatusName" value="Merged with tree conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with property conflicts" />
+        <option name="myStatusName" value="Will be merged with property conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged" />
+        <option name="myStatusName" value="Will be merged" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Not in repository" />
+        <option name="myStatusName" value="Not in repository" />
+        <option name="mySupportsDeletion" value="true" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="UNKNOWN" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally added" />
+        <option name="myStatusName" value="Locally added" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_ADDED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally removed" />
+        <option name="myStatusName" value="Locally removed" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_REMOVED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Switched" />
+        <option name="myStatusName" value="Switched" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SWITCHED" />
+      </FILE-GROUP>
+    </UpdatedFiles>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -262,34 +378,41 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Main2">
+  <component name="RunManager" selected="Application.Main">
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+    </configuration>
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
-          <option name="PATTERN" value="com.company.Model.*" />
+          <option name="PATTERN" value="com.company.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <option name="MAIN_CLASS_NAME" value="com.company.Main" />
       <option name="VM_PARAMETERS" value="" />
-      <option name="PROGRAM_PARAMETERS" value="-size 4 -ai 2 -mode depth -param 2 -prune on -load $PROJECT_DIR$/../Untitled " />
+      <option name="PROGRAM_PARAMETERS" value="-size 5 -ai 2 -mode time -param 10 -prune on -load $PROJECT_DIR$/../adsf.pdf" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="ENABLE_SWING_INSPECTOR" value="false" />
       <option name="ENV_VARIABLES" />
       <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="Dots-and-Boxes" />
+      <module name="Dots and Boxes" />
       <envs />
     </configuration>
-    <configuration name="Main2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration name="PaneController" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
-          <option name="PATTERN" value="com.company.Model.*" />
+          <option name="PATTERN" value="com.company.Controller.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="MAIN_CLASS_NAME" value="com.company.Model.Main2" />
+      <option name="MAIN_CLASS_NAME" value="com.company.Controller.PaneController" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -300,13 +423,6 @@
       <option name="PASS_PARENT_ENVS" value="true" />
       <module name="Dots-and-Boxes" />
       <envs />
-    </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <module />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
@@ -333,7 +449,7 @@
       <option name="TEST_OBJECT" value="class" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
       <option name="ENV_VARIABLES" />
       <option name="PASS_PARENT_ENVS" value="true" />
       <option name="TEST_SEARCH_SCOPE">
@@ -341,12 +457,6 @@
       </option>
       <envs />
       <patterns />
-    </configuration>
-    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
-      <module name="" />
-      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
-      <option name="PROGRAM_PARAMETERS" />
-      <predefined_log_file id="idea.log" enabled="true" />
     </configuration>
     <configuration default="true" type="Remote" factoryName="Remote">
       <option name="USE_SOCKET_TRANSPORT" value="true" />
@@ -368,7 +478,7 @@
       <option name="TEST_OBJECT" value="CLASS" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
       <option name="OUTPUT_DIRECTORY" />
       <option name="ANNOTATION_TYPE" />
       <option name="ENV_VARIABLES" />
@@ -382,66 +492,97 @@
       <properties />
       <listeners />
     </configuration>
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
+      <module name="" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
+      <option name="PROGRAM_PARAMETERS" />
+      <predefined_log_file id="idea.log" enabled="true" />
+    </configuration>
     <list size="2">
       <item index="0" class="java.lang.String" itemvalue="Application.Main" />
-      <item index="1" class="java.lang.String" itemvalue="Application.Main2" />
+      <item index="1" class="java.lang.String" itemvalue="Application.PaneController" />
     </list>
     <recent_temporary>
       <list size="2">
-        <item index="0" class="java.lang.String" itemvalue="Application.Main2" />
-        <item index="1" class="java.lang.String" itemvalue="Application.Main" />
+        <item index="0" class="java.lang.String" itemvalue="Application.Main" />
+        <item index="1" class="java.lang.String" itemvalue="Application.PaneController" />
       </list>
     </recent_temporary>
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
   </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="16b9cbda-983e-478e-bfdb-887447678567" name="Default" comment="" />
-      <created>1529374194361</created>
+      <changelist id="159ad32c-226b-4451-9f29-9176a934262c" name="Default" comment="" />
+      <created>1529270924001</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1529374194361</updated>
-      <workItem from="1529374197395" duration="256000" />
-      <workItem from="1529374522380" duration="6612000" />
+      <updated>1529270924001</updated>
+      <workItem from="1529270925533" duration="6916000" />
+      <workItem from="1529342390171" duration="16261000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6868000" />
+    <option name="totallyTimeSpent" value="23804000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="5" y="24" width="1423" height="792" extended-state="0" />
+    <frame x="0" y="23" width="1440" height="873" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32916668" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.79305553" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37203497" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2184769" sideWeight="0.50277776" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32958803" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2184769" sideWeight="0.49722221" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24947295" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17569445" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.08239701" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.38077402" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32958803" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298611" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32958803" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14357054" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -451,158 +592,329 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <option name="time" value="13" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/com/company/Model/Main2.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/Model/Tree.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Dots-and-Boxes.iml">
+    <entry file="file://$PROJECT_DIR$/src/com/company/Controller/PaneController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/Model/MiniMaxD.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="10" column="22" lean-forward="false" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/Model/Opponent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/Model/Tree.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        <state relative-caret-position="500">
+          <caret line="39" column="20" lean-forward="false" selection-start-line="39" selection-start-column="20" selection-end-line="39" selection-end-column="20" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/Model/GameState.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="39" column="5" lean-forward="true" selection-start-line="39" selection-start-column="5" selection-end-line="39" selection-end-column="5" />
+        <state relative-caret-position="780">
+          <caret line="112" column="11" lean-forward="false" selection-start-line="112" selection-start-column="11" selection-end-line="112" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/pane.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="6" column="296" lean-forward="false" selection-start-line="6" selection-start-column="296" selection-end-line="6" selection-end-column="296" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/Controller/GameState.java" />
+    <entry file="file://$PROJECT_DIR$/src/com/company/Controller/PaneController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="620">
+          <caret line="39" column="36" lean-forward="false" selection-start-line="39" selection-start-column="36" selection-end-line="39" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/pane.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="10" column="33" lean-forward="false" selection-start-line="10" selection-start-column="29" selection-end-line="10" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/Model/Tree.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="9" selection-end-line="9" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/Model/Heuristica.java" />
+    <entry file="file://$PROJECT_DIR$/src/com/company/Model/Arc.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="7" column="11" lean-forward="false" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/View/Canvas.java" />
+    <entry file="file://$PROJECT_DIR$/src/com/company/View/Untitled.fxml" />
+    <entry file="file://$PROJECT_DIR$/src/com/company/Model/MiniMax.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="40">
+          <caret line="2" column="0" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/Controller/GameState.java" />
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-9.jdk/Contents/Home/lib/src.zip!/java.base/java/lang/reflect/Method.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="127">
+          <caret line="563" column="0" lean-forward="false" selection-start-line="563" selection-start-column="0" selection-end-line="563" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/Model/MiniMaxDP.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="26" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/Model/Player.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/Model/Main2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="71" column="8" lean-forward="false" selection-start-line="71" selection-start-column="8" selection-end-line="71" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_152.jdk/Contents/Home/javafx-src.zip!/javafx/scene/layout/GridPane.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="157">
+          <caret line="304" column="0" lean-forward="false" selection-start-line="304" selection-start-column="0" selection-end-line="304" selection-end-column="0" />
+          <folding>
+            <element signature="e#13688#13689#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_152.jdk/Contents/Home/javafx-src.zip!/javafx/scene/Scene.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="2494" column="0" lean-forward="false" selection-start-line="2494" selection-start-column="0" selection-end-line="2494" selection-end-column="0" />
+          <folding>
+            <element signature="e#66617#66618#0" expanded="false" />
+            <element signature="e#66663#66664#0" expanded="false" />
+            <element signature="class#MouseHandler#0;class#Scene#0" expanded="false" />
+            <element signature="method#process#0;class#MouseHandler#0;class#Scene#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_152.jdk/Contents/Home/javafx-src.zip!/javafx/event/Event.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="484">
+          <caret line="198" column="0" lean-forward="false" selection-start-line="198" selection-start-column="0" selection-end-line="198" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_152.jdk/Contents/Home/javafx-src.zip!/javafx/fxml/FXMLLoader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="178">
+          <caret line="1772" column="0" lean-forward="false" selection-start-line="1772" selection-start-column="0" selection-end-line="1772" selection-end-column="0" />
+          <folding>
+            <element signature="class#ControllerMethodEventHandler#0;class#FXMLLoader#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/pane.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="11" column="40" lean-forward="false" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/Model/GameState.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-103">
+          <caret line="34" column="5" lean-forward="false" selection-start-line="34" selection-start-column="5" selection-end-line="34" selection-end-column="5" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/Controller/PaneController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="310">
-          <caret line="139" column="31" lean-forward="false" selection-start-line="139" selection-start-column="31" selection-end-line="139" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/Model/Arc.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="91" column="27" lean-forward="false" selection-start-line="91" selection-start-column="27" selection-end-line="91" selection-end-column="27" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/Model/Player.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="50" selection-end-column="5" />
+        <state relative-caret-position="2200">
+          <caret line="118" column="0" lean-forward="false" selection-start-line="118" selection-start-column="0" selection-end-line="118" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/Model/Board.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="265">
-          <caret line="332" column="20" lean-forward="false" selection-start-line="332" selection-start-column="20" selection-end-line="332" selection-end-column="20" />
+        <state relative-caret-position="180">
+          <caret line="13" column="4" lean-forward="false" selection-start-line="13" selection-start-column="4" selection-end-line="13" selection-end-column="32" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="18" column="35" lean-forward="false" selection-start-line="18" selection-start-column="35" selection-end-line="18" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/Controller/GameState.java" />
+    <entry file="file://$PROJECT_DIR$/src/com/company/Controller/PaneController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="620">
+          <caret line="39" column="36" lean-forward="false" selection-start-line="39" selection-start-column="36" selection-end-line="39" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/pane.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="10" column="33" lean-forward="false" selection-start-line="10" selection-start-column="29" selection-end-line="10" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/Model/Tree.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="9" selection-end-line="9" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/Model/Heuristica.java" />
+    <entry file="file://$PROJECT_DIR$/src/com/company/Model/Arc.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="7" column="11" lean-forward="false" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/View/Canvas.java" />
+    <entry file="file://$PROJECT_DIR$/src/com/company/View/Untitled.fxml" />
+    <entry file="file://$PROJECT_DIR$/src/com/company/Model/MiniMax.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="40">
+          <caret line="2" column="0" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/Controller/GameState.java" />
+    <entry file="file://$PROJECT_DIR$/src/com/company/pane.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="11" column="40" lean-forward="false" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-9.jdk/Contents/Home/lib/src.zip!/java.base/java/lang/reflect/Method.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="127">
+          <caret line="563" column="0" lean-forward="false" selection-start-line="563" selection-start-column="0" selection-end-line="563" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/Model/MiniMaxDP.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        <state relative-caret-position="0">
+          <caret line="0" column="26" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="26" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/Model/MiniMaxT.java">
+    <entry file="file://$PROJECT_DIR$/src/com/company/Model/Board.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        <state relative-caret-position="180">
+          <caret line="13" column="4" lean-forward="false" selection-start-line="13" selection-start-column="4" selection-end-line="13" selection-end-column="32" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/Model/MiniMaxTP.java">
+    <entry file="file://$PROJECT_DIR$/src/com/company/Model/GameState.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        <state relative-caret-position="397">
+          <caret line="39" column="5" lean-forward="false" selection-start-line="39" selection-start-column="5" selection-end-line="39" selection-end-column="5" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/Model/MiniMax.java">
+    <entry file="file://$PROJECT_DIR$/src/com/company/Controller/PaneController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="31" column="19" lean-forward="true" selection-start-line="31" selection-start-column="19" selection-end-line="31" selection-end-column="19" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="872">
+          <caret line="77" column="0" lean-forward="false" selection-start-line="77" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/Model/Main2.java">
+    <entry file="file://$PROJECT_DIR$/src/com/company/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="121">
-          <caret line="11" column="17" lean-forward="false" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="420">
+          <caret line="132" column="0" lean-forward="false" selection-start-line="132" selection-start-column="0" selection-end-line="132" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -646,7 +958,7 @@
       </state>
       <state key="JdkListConfigurable.UI">
         <settings>
-          <last-edited>1.8</last-edited>
+          <last-edited>9</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -658,12 +970,24 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
-          <last-edited>Dots-and-Boxes</last-edited>
+          <last-edited>Dots and Boxes</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
                 <option value="0.2" />
                 <option value="0.6" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
               </list>
             </option>
           </splitter-proportions>
