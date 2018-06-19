@@ -5,8 +5,8 @@ import com.company.Controller.PaneController;
 import com.company.Model.GameState;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 import java.io.File;
 import java.util.HashMap;
@@ -16,35 +16,38 @@ import static javafx.application.Platform.exit;
 
 public class Main extends Application{
 
+    private static final int HEIGHT = 1000;
+    private static final int WIDTH = 1000;
+
+    private GameState model;
+    private Map parameters;
     public static void main(String[] args) {
         launch(args);
     }
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        Map parameters = parseInput(getParameters());
+        parameters = parseInput(getParameters());
         if (parameters == null){
             exit();
+            throw new NullPointerException();
         }
-        BorderPane root = new BorderPane();
         FXMLLoader paneLoader = new FXMLLoader(getClass().getResource("pane.fxml"));
-        root.setCenter(paneLoader.load());
+        Parent root = paneLoader.load();
         PaneController paneController = paneLoader.getController();
+        paneController.setMain(this);
 
-        GameState model = new GameState(4,true,8, true, true);
+        restart();
+
         paneController.initModel(model);
 
-        Scene scene = new Scene(root, 800, 600);
+        Scene scene = new Scene(root, WIDTH, HEIGHT);
         primaryStage.setScene(scene);
         primaryStage.show();
     }
 
     private Map parseInput(Parameters parameters) {
         Map resp = new HashMap();
-        for (String string: parameters.getRaw()) {
-            System.out.print(string);
-        }
-
         String arg, par;
         for (int i =0; i < parameters.getRaw().size(); i++) {
             arg = parameters.getRaw().get(i);
@@ -115,5 +118,15 @@ public class Main extends Application{
 
         }
         return resp;
+    }
+
+    public GameState restart(){
+        model = new GameState(
+                (int)parameters.get("size"),
+                (int)parameters.get("ai"),
+                (int)parameters.get("param"),
+                (boolean)parameters.get("mode"),
+                (boolean)parameters.get("prune"));
+        return model;
     }
 }

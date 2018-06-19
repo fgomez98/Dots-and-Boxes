@@ -9,9 +9,9 @@
       <AnchorPane fx:id="pane" prefHeight="400.0" prefWidth="400.0" />
     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="398.0" prefWidth="94.0">
          <children>
-            <Button fx:id="restartButton" layoutX="28.0" layoutY="343.0" mnemonicParsing="false" onMouseReleased="#restartEvent" text="Reiniciar" />
+            <Button fx:id="restartButton" layoutX="28.0" layoutY="343.0" mnemonicParsing="false" text="Reiniciar" />
             <TextField fx:id="player1Name" editable="false" layoutY="1.0" prefHeight="27.0" prefWidth="127.0" text="Player 1" />
-            <Button fx:id="undoButton" layoutX="34.0" layoutY="186.0" mnemonicParsing="false" onMouseReleased="#undoEvent" text="Undo" />
+            <Button fx:id="undoButton" layoutX="34.0" layoutY="186.0" mnemonicParsing="false" text="Undo" />
             <TextField fx:id="player1Score" editable="false" layoutY="28.0" prefHeight="27.0" prefWidth="127.0" />
             <TextField fx:id="player2Name" editable="false" layoutY="64.0" prefHeight="27.0" prefWidth="127.0" text="Player 2" />
             <TextField fx:id="player2Score" editable="false" layoutY="91.0" prefHeight="27.0" prefWidth="127.0" />
