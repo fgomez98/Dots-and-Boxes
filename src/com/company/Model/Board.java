@@ -42,8 +42,8 @@ public class Board implements Serializable {
                 player2 = new Player(0,2);
                 break;
             case 2:
-                player2 = new Opponent(0, 2);
                 player1 = new Player(0,1);
+                player2 = new Opponent(0, 2);
                 break;
             case 3:
                 player1 = new Opponent(0, 1);
@@ -69,41 +69,6 @@ public class Board implements Serializable {
         return boxVertical;
     }
 
-    /*
-        public boolean setHEdge(int x, int y, Player player){
-            if (boxHorizontal[x][y] == null){
-                boxHorizontal[x][y] = player;
-                if(y < (N-1) && boxHorizontal[x][y+1] != null && boxVertical[y][x] != null && boxVertical[x+1][y] != null){
-                    player.incScore(1);
-                    boxBoard[x][y] = player;
-                }
-                if(y > 0 && x < (N-1)&& boxHorizontal[x][y-1] != null && boxVertical[x][y-1] != null && boxVertical[x+1][y-1] != null){
-                   player.incScore(1);
-                    boxBoard[x][y-1] = player;
-                }
-                return true;
-
-            }
-            return false;
-        }
-
-        public boolean setVEdge(int x, int y, Player player) {
-            if (boxVertical[x][y] == null) {
-                boxVertical[x][y] = player;
-                if (x < (N-1) && (boxVertical[x+1][y] != null && boxHorizontal[x][y] != null && boxHorizontal[x][y+1] != null)) {
-                    player.incScore(1);
-                    boxBoard[x][y] = player;
-                }
-                if (x > 0 && (boxVertical[x-1][y] != null && boxHorizontal[x- 1][y + 1] != null && boxHorizontal[x-1][y] != null)) {
-                    player.incScore(1);
-                    boxBoard[x-1][y] = player;
-
-                }
-                return true;
-            }
-            return false;
-        }
-    */
     private void initBoards(Player[][] board, int fils, int cols) {
         for (int i = 0; i < fils; i++) {
             for (int j = 0; j < cols; j++) {
@@ -154,7 +119,7 @@ public class Board implements Serializable {
     }
 
     public boolean boardComplete() {
-        return (player1.getScore()+ player2.getScore()) == Math.pow(N-1, 2);
+        return (player1.getScore() + player2.getScore()) == Math.pow(N-1, 2);
     }
 
     public Player getWinner() {
@@ -175,51 +140,7 @@ public class Board implements Serializable {
         aux.turn = this.turn;
         return aux;
     }
-/*
-    public boolean addArc(Arc arc) {
-        if(arc.isHorizontal()){
-            return setHEdge(arc.getX(),arc.getY(), arc.getPlayer());
-        }else{
-            return setVEdge(arc.getX(),arc.getY(),arc.getPlayer());
-        }
-    }
 
-    public boolean removeArc(Arc arc) {
-        int x = arc.getX();
-        int y = arc.getY();
-        if(arc.isHorizontal()){
-            if(boxHorizontal[x][y] == null){
-                return false;
-            } else {
-                if(y < (N-1) && boxHorizontal[x][y+1] != null && boxVertical[y][x] != null && boxVertical[x+1][y] != null){
-                    boxBoard[x][y].incScore(-1);
-                    boxBoard[x][y] = null;
-                }
-                if(y > 0 && x > 0 && boxHorizontal[x][y-1] != null && boxVertical[x][y-1] != null && boxVertical[x+1][y-1] != null){
-                    boxBoard[x][y-1].incScore(-1);
-                    boxBoard[x][y-1] = null;
-                }
-                boxHorizontal[x][y] = null;
-                return true;
-            }
-        } else {
-            if (boxVertical[x][y] == null){
-                return false;
-            } else{
-                if(x < (N-1) && (boxVertical[x+1][y] != null && boxHorizontal[x][y] != null && boxHorizontal[x][y+1] != null)){
-                    boxBoard[x][y].incScore(-1);
-                    boxBoard[x][y] = null;
-                }
-                if (x > 0 && (boxVertical[x-1][y] != null && boxHorizontal[x- 1][y + 1] != null && boxHorizontal[x-1][y] != null)){
-                    boxBoard[x-1][y].incScore(-1);
-                    boxBoard[x-1][y] = null;
-                }
-                boxVertical[x][y] = null;
-                return true;
-            }
-        }
-    }
-*/
     public int scoresCheck() {
         return player2.getScore() + player1.getScore();
     }
@@ -243,7 +164,6 @@ public class Board implements Serializable {
             return player1;
         }
     }
-
 
     @Override
     public boolean equals(Object o) {
@@ -272,39 +192,6 @@ public class Board implements Serializable {
         result = 31 * result + turn;
         return result;
     }
-
-    /*
-        o-o-o-o-o
-        | | | | |
-        o-o-o-o-o
-        | | | | |
-        o-o-o-o-o
-    */
-/*
-    public void printBoard() {
-        for (int i = 0; i < N; i++) {
-            //imprimo horizontal
-            for (int j = 0; j < N; j++) {
-                System.out.print("o"); // los o son puntos en el tablero
-                if ((i<(N-1)) && boxHorizontal[i][j] != null) {
-                    System.out.print("-");
-                } else {
-                    System.out.print(" ");
-                }
-            }
-            System.out.println();
-            //imprimo vertical
-            for (int j = 0; j < N-1 ; j++) {
-                if (boxVertical[i][j] != null) {
-                    System.out.print("| ");
-                } else {
-                    System.out.print("  ");
-                }
-            }
-            System.out.println();
-        }
-    }
-*/
 
     public boolean setHEdge(int x, int y, Player player){
         if (boxHorizontal[y][x] == null){

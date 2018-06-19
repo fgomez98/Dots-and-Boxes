@@ -6,15 +6,15 @@ public class MiniMaxDP extends MiniMax {
         super(depthOrTime);
     }
 
-    public int minimax(Tree current, int depth, boolean maximaizer, Player currentPlayer, Player nextPlayer, int alpha, int beta) {
+    public int minimax(Tree current, int depth, boolean maximizer, Player currentPlayer, Player nextPlayer, int alpha, int beta) {
         if (depth == 0 || current.getBoard().boardComplete()) {
             return heuristica(current.getBoard(), current.getBoard().getCurrentPlayer(), currentPlayer);
         }
-        if (maximaizer) { //MAXIMIZER
+        if (maximizer) { //MAXIMIZER
             int maxEvaluation = Integer.MIN_VALUE;
             current.generateChildren();
             for (Tree child : current.getChildren()) {
-                int auxEvalution = minimax(child, depth-1, !maximaizer, nextPlayer, currentPlayer,alpha, beta); {
+                int auxEvalution = minimax(child, depth-1, !maximizer, nextPlayer, currentPlayer,alpha, beta); {
                     maxEvaluation = Math.max(maxEvaluation, auxEvalution);
                     alpha = Math.max(alpha, auxEvalution);
                     if (beta <=  alpha) {
@@ -27,7 +27,7 @@ public class MiniMaxDP extends MiniMax {
             int minEvaluation = Integer.MAX_VALUE;
             current.generateChildren();
             for (Tree child : current.getChildren()) {
-                int auxEvaluation = minimax(child, depth-1, !maximaizer, nextPlayer, currentPlayer, alpha, beta);
+                int auxEvaluation = minimax(child, depth-1, !maximizer, nextPlayer, currentPlayer, alpha, beta);
                 minEvaluation = Math.min(minEvaluation, auxEvaluation);
                 beta = Math.min(beta, auxEvaluation);
                 if (beta <= alpha) {
@@ -66,6 +66,10 @@ public class MiniMaxDP extends MiniMax {
                 bestBoardEvaluation = auxEvaluation;
                 bestBoard = child;
             }
+        }
+        if (bestBoard == null) {
+            System.out.println("tablero feo");
+            board.printBoard();
         }
         return bestBoard;
     }

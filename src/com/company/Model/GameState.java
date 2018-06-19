@@ -34,23 +34,21 @@ public class GameState {
         }
     }
 
-    public void handelInput(int x, int y, boolean horizontal) { // le retorna al View el tablero que tiene que imprimir en pantalla
+    public void handleInput(int x, int y, boolean horizontal) { // le retorna al View el tablero que tiene que imprimir en pantalla
         if (board.getCurrentPlayer().isHuman()) {
             System.out.println("humano");
             if (board.addArc(new Arc(board.getCurrentPlayer(), x,y, horizontal))) { // los arcos pueden ser horizontales o veritcales
                 if (scores == board.scoresCheck()) { // si es distinto el humano completo un casillero, gana un turno
                     board.nextTurn();
                 }
-                //imprimo el tablero
             }
         } else { //computadora
             System.out.println("compu");
-            Tree nextMove = miniMax.bestMove2(board, board.getCurrentPlayer(),board.getNextPlayer());
+            Tree nextMove = miniMax.bestMove2(board, board.getCurrentPlayer(), board.getNextPlayer());
             board = nextMove.getBoard();
             moves.addLast(nextMove.getArcs());
             scores = board.scoresCheck();
             board.nextTurn();
-            //imprimo el tablero
         }
     }
 
@@ -80,6 +78,10 @@ public class GameState {
     public void loadBoard(ObjectInputStream ois) throws ClassNotFoundException, IOException {
         board = (Board) ois.readObject();
         ois.close();
+    }
+
+    public int getPlayerId() {
+        return board.getCurrentPlayer().getId();
     }
 
     public int getPlayer1Score() {
