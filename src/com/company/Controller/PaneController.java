@@ -26,13 +26,16 @@ public class PaneController {
     private static final Paint SQUARE_FULL = Color.RED;
     private static final Paint SQUARE_UNFULL = Color.WHITE;
     private static final Paint CIRCLE_COLOR = Color.GREEN;
+    private static final String TURN = "white";
+    private static final String NO_TURN = "red";
+    private static final int PADDING = 10;
+
     private GameState gameState;
     private Main main;
-    private int cols;
-    private static final double PADDING = 2.0;
+    private Player player1;
 
     @FXML
-    private TextField player1Score, player2Score;
+    private TextField player1Score, player2Score,player1Name,player2Name;
     @FXML
     private AnchorPane pane;
 
@@ -40,23 +43,45 @@ public class PaneController {
 
     public void initModel(GameState gameState) {
         setUpGState(gameState);
-        grid = new GridPane();
         setUpGrid();
+        setUpNames();
+        setTurn();
         resetRectangles();
         resetScore();
         pane.getChildren().add(grid);
     }
 
+    private void setUpNames() {
+        player1 = gameState.getPlayer1();
+        Player player2 = gameState.getPlayer2();
+
+        String aux = player1.isHuman() ? "Player 1": "Ai 1";
+        player1Name.textProperty().setValue(aux);
+        aux = player2.isHuman() ? "Player 2": "Ai 2";
+        player2Name.textProperty().setValue(aux);
+    }
+
+    private void setTurn() {
+        if (gameState.getCurrentPlayer().equals(player1)){
+            player1Name.setStyle("-fx-background-color: "+ TURN +";");
+            player2Name.setStyle("-fx-background-color: "+ NO_TURN +";");
+        }else {
+            player1Name.setStyle("-fx-background-color: "+ NO_TURN +";");
+            player2Name.setStyle("-fx-background-color: "+  TURN+";");
+        }
+    }
+
     private void setUpGrid() {
-        grid.setPadding(new Insets(0, 10, 0, 10));
+        grid = new GridPane();
+        grid.setPadding(new Insets(PADDING, PADDING, PADDING, PADDING));
 
         int n = gameState.size();
-        this.cols = n + n - 1;
+        int cols = n + n - 1;
         double maxHeight = pane.getHeight();
         double maxWidth = pane.getWidth();
         double max = (maxHeight < maxWidth) ? maxHeight : maxWidth;
 
-        double radius = max / (2 * (n + 3 * (n - 1)) + PADDING);
+        double radius = max / (2 * (n + 3 * (n - 1)));
         double length = 6 * radius;
         double tall = radius * 2;
 
@@ -125,13 +150,13 @@ public class PaneController {
         @Override
         public void handle(MouseEvent event) {
             Node source = (Node) event.getSource();
-            Rectangle rect = (Rectangle) source;
             Integer colIndex = GridPane.getColumnIndex(source);
             Integer rowIndex = GridPane.getRowIndex(source);
             boolean horizontal = rowIndex % 2 == 0;
             gameState.handleInput(colIndex / 2, rowIndex / 2, horizontal);
             resetRectangles();
             resetScore();
+            setTurn();
         }
     }
 
@@ -149,7 +174,7 @@ public class PaneController {
     }
 
     @FXML
-    private void handleSaveNExit() {
+    private void handleSave() {
         main.save();
     }
 }

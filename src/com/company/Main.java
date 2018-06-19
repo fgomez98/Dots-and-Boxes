@@ -36,7 +36,6 @@ public class Main extends Application implements Serializable{
             exit();
             throw new NullPointerException();
         }
-        this.primaryStage = primaryStage;
         FXMLLoader paneLoader = new FXMLLoader(getClass().getResource("pane.fxml"));
         Parent root = paneLoader.load();
         PaneController paneController = paneLoader.getController();
@@ -48,7 +47,12 @@ public class Main extends Application implements Serializable{
             restart();
         }
 
+
         Scene scene = new Scene(root, WIDTH, HEIGHT);
+        if (primaryStage != null)
+            this.primaryStage = primaryStage;
+        else
+            this.primaryStage = new Stage();
         this.primaryStage.setScene(scene);
         this.primaryStage.show();
 
@@ -176,17 +180,13 @@ public class Main extends Application implements Serializable{
             System.out.println("File was not saved");
         }
     }
-    public void saveObject(ObjectOutputStream out) throws IOException {
-        out.defaultWriteObject();
+    private void writeObject(final ObjectOutputStream out) throws IOException {
         out.writeObject(gameState);
         out.writeObject(parameters);
-        out.writeObject(primaryStage);
     }
 
-    public void loadObject(ObjectInputStream ois) throws IOException, ClassNotFoundException {
-        ois.defaultReadObject();
+    private void readObject(final ObjectInputStream ois) throws IOException, ClassNotFoundException {
         gameState = (GameState) ois.readObject();
         parameters = (Map) ois.readObject();
-        primaryStage = (Stage) ois.readObject();
     }
 }

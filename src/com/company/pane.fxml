@@ -15,7 +15,7 @@
             <TextField fx:id="player1Score" editable="false" layoutY="28.0" prefHeight="27.0" prefWidth="127.0" />
             <TextField fx:id="player2Name" editable="false" layoutY="64.0" prefHeight="27.0" prefWidth="127.0" text="Player 2" />
             <TextField fx:id="player2Score" editable="false" layoutY="91.0" prefHeight="27.0" prefWidth="127.0" />
-            <Button layoutX="9.0" layoutY="357.0" mnemonicParsing="false" onAction="#handleSaveNExit" text="Save and Exit" />
+            <Button layoutX="36.0" layoutY="357.0" mnemonicParsing="false" onAction="#handleSave" text="Save" />
          </children></AnchorPane>
   </items>
 </SplitPane>
