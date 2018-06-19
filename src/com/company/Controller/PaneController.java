@@ -122,7 +122,6 @@ public class PaneController {
 
     @FXML
     private void undoEvent() {
-        System.out.println("puto el que lee");
         gameState.undo();
         resetRectangles();
 
