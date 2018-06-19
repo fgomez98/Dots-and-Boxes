@@ -5,8 +5,6 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.util.LinkedList;
-import java.util.List;
-import java.util.Set;
 
 public class GameState implements Serializable{
     private Board board;
@@ -41,17 +39,18 @@ public class GameState implements Serializable{
 
     public void handleInput(int x, int y, boolean horizontal) { // le retorna al View el tablero que tiene que imprimir en pantalla
         if (board.getCurrentPlayer().isHuman()) {
-            System.out.println("humano");
             Arc arc = new Arc(board.getCurrentPlayer(), x,y, horizontal);
             if (board.addArc(arc)) { // los arcos pueden ser horizontales o veritcales
                 moves.addLast(arc);
                 if (scores == board.scoresCheck()) { // si es distinto el humano completo un casillero, gana un turno
                     board.nextTurn();
+                    if (!getCurrentPlayer().isHuman()) {
+                        handleInput(0,0, true);
+                    }
                 }
                 scores = board.scoresCheck();
             }
         } else { //computadora
-            System.out.println("compu");
             Tree nextMove = miniMax.bestMove2(board, board.getCurrentPlayer(), board.getNextPlayer());
             board = nextMove.getBoard();
             moves.addAll(nextMove.getArcs()); //modificar orden de agregado
@@ -62,7 +61,6 @@ public class GameState implements Serializable{
 
     public void undo() {
         if (moves.size() == 0) {
-            System.out.println("no hay arcos para sacar");
             return;
         }
         Arc arc = moves.removeLast();
@@ -71,11 +69,9 @@ public class GameState implements Serializable{
         Player curPlayer = board.getCurrentPlayer();
         if (arc.getPlayer().isHuman()) {
             if (curPlayer.equals(arc.getPlayer())) {
-                System.out.println("arco humano");
                 scores = board.scoresCheck();
             } else {
                 board.nextTurn();
-                System.out.println("arco humano");
                 scores = board.scoresCheck();
             }
         } else {
@@ -86,7 +82,6 @@ public class GameState implements Serializable{
             moves.addLast(arc);
             board.addArc(arc);
             board.nextTurn();
-            System.out.println("arco de compuatdora");
             scores = board.scoresCheck();
         }
     }

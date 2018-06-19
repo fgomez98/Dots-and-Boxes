@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
-import java.util.Set;
 
 public abstract class MiniMax implements Serializable {
 
@@ -14,13 +13,11 @@ public abstract class MiniMax implements Serializable {
         this.depthOrTime = depthOrTime;
     }
 
-    public abstract Board bestMove(Board board, Player currentPlayer, Player nextPlayer);
-
     public abstract Tree bestMove2(Board board, Player currentPlayer, Player nextPlayer);
 
     public int heuristica(Board board, Player actualPlayer, Player lastPlayer) {
         int ret;
-        if (actualPlayer.equals(board.getPlayer1())){
+        if (actualPlayer.equals(board.getPlayer2())){
             ret = 20 * (board.getPlayer1().getScore()-board.getPlayer2().getScore());//fijo un peso 10 para la diferencia de puntos entre jugadores en la posicion especificada
         } else{
             ret = 20 * (board.getPlayer2().getScore()-board.getPlayer1().getScore());//fijo un peso 10 para la diferencia de puntos entre jugadores en la posicion especificada

@@ -8,8 +8,6 @@ import java.io.Serializable;
 public class Player implements Cloneable, Serializable {
     private int score;
     private int id;
-   // private String name;
-    //color
 
     public Player(int score, int id) {
         this.score = score;
