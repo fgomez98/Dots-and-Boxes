@@ -7,8 +7,10 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.stage.FileChooser;
 import javafx.stage.Stage;
-import java.io.File;
+
+import java.io.*;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -18,13 +20,14 @@ public class Main extends Application{
 
     private static final int HEIGHT = 1000;
     private static final int WIDTH = 1000;
+    private static final int MIN_PARAM_COUNT = 5;
 
-    private GameState model;
+    private GameState gameState;
     private Map parameters;
+    private Stage primaryStage;
     public static void main(String[] args) {
         launch(args);
     }
-
     @Override
     public void start(Stage primaryStage) throws Exception {
         parameters = parseInput(getParameters());
@@ -32,18 +35,23 @@ public class Main extends Application{
             exit();
             throw new NullPointerException();
         }
+        this.primaryStage = primaryStage;
         FXMLLoader paneLoader = new FXMLLoader(getClass().getResource("pane.fxml"));
         Parent root = paneLoader.load();
         PaneController paneController = paneLoader.getController();
         paneController.setMain(this);
 
-        restart();
+        if (parameters.containsKey("load")){
+            loadFromFile();
+        }else{
+            restart();
+        }
 
-        paneController.initModel(model);
+        paneController.initModel(gameState);
 
         Scene scene = new Scene(root, WIDTH, HEIGHT);
-        primaryStage.setScene(scene);
-        primaryStage.show();
+        this.primaryStage.setScene(scene);
+        this.primaryStage.show();
     }
 
     private Map parseInput(Parameters parameters) {
@@ -112,21 +120,59 @@ public class Main extends Application{
                         return null;
                 }
             }catch (Exception e){
-                System.out.println("Illegal parameter: \""+par+"\" for argument: \n"+arg+"\". "+ e.getMessage());
+                System.out.println("Illegal parameter: \""+par+"\" for argument: \""+arg+"\". "+ e.getMessage());
                 return null;
             }
 
+        }
+        if (resp.size() < MIN_PARAM_COUNT) {
+            System.out.println("Some parameters are missing, please see the README file in the project folder.");
+            return null;
         }
         return resp;
     }
 
     public GameState restart(){
-        model = new GameState(
+        gameState = new GameState(
                 (int)parameters.get("size"),
                 (int)parameters.get("ai"),
                 (int)parameters.get("param"),
                 (boolean)parameters.get("mode"),
                 (boolean)parameters.get("prune"));
-        return model;
+        return gameState;
+    }
+
+    private void loadFromFile() {
+        FileInputStream fileInputStream = null;
+        ObjectInputStream objectInputStream = null;
+        try {
+            fileInputStream = new FileInputStream((String) parameters.get("load"));
+            objectInputStream = new ObjectInputStream(fileInputStream);
+            gameState = (GameState) objectInputStream.readObject();
+            objectInputStream.close();
+        } catch (IOException | ClassNotFoundException e) {
+            System.out.println(e.getMessage());
+            System.out.println("Error loading from file. The game will be started from scratch.");
+            restart();
+        }
+    }
+
+    public void save(){
+        FileChooser chooser = new FileChooser();
+        chooser.setTitle("Open File");
+        chooser.setInitialFileName("Dont-and-Crosses");
+        File file = chooser.showSaveDialog(new Stage());
+
+        FileOutputStream fileOutputStream = null;
+        try {
+            fileOutputStream = new FileOutputStream(file);
+            ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);
+            objectOutputStream.writeObject(gameState);
+            objectOutputStream.flush();
+            objectOutputStream.close();
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+            System.out.println("File was not saved");
+        }
     }
 }
