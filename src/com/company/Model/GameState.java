@@ -62,6 +62,7 @@ public class GameState implements Serializable{
 
     public void undo() {
         if (moves.size() == 0) {
+            System.out.println("no hay arcos para sacar");
             return;
         }
         Arc arc = moves.removeLast();
@@ -70,11 +71,13 @@ public class GameState implements Serializable{
         Player curPlayer = board.getCurrentPlayer();
         if (arc.getPlayer().isHuman()) {
             if (curPlayer.equals(arc.getPlayer())) {
-                System.out.println("puto");
+                System.out.println("arco humano");
+                scores = board.scoresCheck();
                 return;
             } else {
                 board.nextTurn();
-                System.out.println("Fer se la come");
+                System.out.println("arco humano");
+                scores = board.scoresCheck();
                 return;
             }
         } else {
@@ -85,9 +88,14 @@ public class GameState implements Serializable{
             moves.addLast(arc);
             board.addArc(arc);
             board.nextTurn();
-            System.out.println("odio esta mierda");
+            System.out.println("arco de compuatdora");
+            scores = board.scoresCheck();
             return;
         }
+    }
+
+    public int checkScores() {
+        return board.scoresCheck();
     }
 
     public boolean isWinner() {

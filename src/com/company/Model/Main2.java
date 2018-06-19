@@ -9,8 +9,8 @@ public class Main2 {
     static Set<Board> children = new HashSet<>();
 
     public static void main(String[] args) {
-        int N = 6;
-        GameState game = new GameState(N, 2, 3, false, true);
+        int N = 10;
+        GameState game = new GameState(N, 2, 2, false, true);
         int i = 50;
         Random rand = new Random();
         game.printTerminal();
