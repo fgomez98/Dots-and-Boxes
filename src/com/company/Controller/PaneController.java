@@ -75,6 +75,7 @@ public class PaneController {
         this.gameState = gameState;
         getArcs();
     }
+
     private void getArcs(){
         vLines = gameState.getVBoard();
         hLines = gameState.getHBoard();
