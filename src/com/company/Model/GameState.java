@@ -144,6 +144,10 @@ public class GameState implements Serializable{
 
     public Player getCurrentPlayer(){return board.getCurrentPlayer();}
 
+    public Player getPlayer1(){return board.getPlayer1();}
+
+    public Player getPlayer2(){return board.getPlayer2();}
+
     public void saveObject(ObjectOutputStream out) throws IOException {
         out.writeObject(board);
         out.writeObject(miniMax);

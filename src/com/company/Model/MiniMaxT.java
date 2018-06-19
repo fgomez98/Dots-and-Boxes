@@ -7,7 +7,7 @@ public class MiniMaxT extends MiniMax {
     }
 
     public int minimax(Tree current, long timeLimit, boolean maximaizer, Player currentPlayer, Player nextPlayer) {
-        if (System.currentTimeMillis() == timeLimit) {
+        if (System.currentTimeMillis() >= timeLimit) {
             return heuristica(current.getBoard(), current.getBoard().getCurrentPlayer(), currentPlayer);
         }
         if (maximaizer) { //MAXIMIZER
