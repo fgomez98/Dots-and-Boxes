@@ -162,17 +162,18 @@ public class Main extends Application implements Serializable{
         }
     }
 
-    public void save(){
+    private File fileRequestDialog(){
         FileChooser chooser = new FileChooser();
-        chooser.setTitle("Open File");
+        chooser.setTitle("Save File");
         chooser.setInitialFileName("Dont-and-Crosses");
-        File file = chooser.showSaveDialog(new Stage());
+        return chooser.showSaveDialog(new Stage());
+    }
 
-        FileOutputStream fileOutputStream = null;
+    private void writeToFile(Object o, File file){
         try {
-            fileOutputStream = new FileOutputStream(file);
+            FileOutputStream fileOutputStream = new FileOutputStream(file);
             ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);
-            objectOutputStream.writeObject(this);
+            objectOutputStream.writeObject(o);
             objectOutputStream.flush();
             objectOutputStream.close();
         } catch (IOException e) {
@@ -180,6 +181,12 @@ public class Main extends Application implements Serializable{
             System.out.println("File was not saved");
         }
     }
+
+    public void save(){
+        File file = fileRequestDialog();
+        writeToFile(this, file);
+    }
+
     private void writeObject(final ObjectOutputStream out) throws IOException {
         out.writeObject(gameState);
         out.writeObject(parameters);
@@ -188,5 +195,10 @@ public class Main extends Application implements Serializable{
     private void readObject(final ObjectInputStream ois) throws IOException, ClassNotFoundException {
         gameState = (GameState) ois.readObject();
         parameters = (Map) ois.readObject();
+    }
+
+    public void dotFileRequest() {
+        File file = fileRequestDialog();
+        //writeToFile(gameState.getDot(), file);
     }
 }

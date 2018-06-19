@@ -81,7 +81,7 @@ public class PaneController {
         double maxWidth = pane.getWidth();
         double max = (maxHeight < maxWidth) ? maxHeight : maxWidth;
 
-        double radius = max / (2 * (n + 3 * (n - 1)));
+        double radius = (max-PADDING*2) / (2 * (n + 3 * (n - 1))) ;
         double length = 6 * radius;
         double tall = radius * 2;
 
@@ -176,5 +176,9 @@ public class PaneController {
     @FXML
     private void handleSave() {
         main.save();
+    }
+    @FXML
+    private void dotFileRequestHandle(){
+        main.dotFileRequest();
     }
 }

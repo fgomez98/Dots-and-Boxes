@@ -9,13 +9,14 @@
       <AnchorPane fx:id="pane" prefHeight="400.0" prefWidth="400.0" />
     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="398.0" prefWidth="94.0">
          <children>
-            <Button fx:id="restartButton" layoutX="24.0" layoutY="247.0" mnemonicParsing="false" onMouseReleased="#restartEvent" text="Reiniciar" />
-            <TextField fx:id="player1Name" editable="false" layoutY="1.0" prefHeight="27.0" prefWidth="127.0" text="Player 1" />
-            <Button fx:id="undoButton" layoutX="34.0" layoutY="186.0" mnemonicParsing="false" onMouseReleased="#undoEvent" text="Undo" />
+            <Button fx:id="restartButton" layoutX="30.0" layoutY="247.0" mnemonicParsing="false" onMouseReleased="#restartEvent" text="Reiniciar" />
+            <TextField fx:id="player1Name" layoutY="1.0" prefHeight="27.0" prefWidth="127.0" text="Player 1" />
+            <Button fx:id="undoButton" layoutX="40.0" layoutY="186.0" mnemonicParsing="false" onMouseReleased="#undoEvent" text="Undo" />
             <TextField fx:id="player1Score" editable="false" layoutY="28.0" prefHeight="27.0" prefWidth="127.0" />
-            <TextField fx:id="player2Name" editable="false" layoutY="64.0" prefHeight="27.0" prefWidth="127.0" text="Player 2" />
+            <TextField fx:id="player2Name" layoutY="64.0" prefHeight="27.0" prefWidth="127.0" text="Player 2" />
             <TextField fx:id="player2Score" editable="false" layoutY="91.0" prefHeight="27.0" prefWidth="127.0" />
-            <Button layoutX="36.0" layoutY="357.0" mnemonicParsing="false" onAction="#handleSave" text="Save" />
+            <Button layoutX="41.0" layoutY="357.0" mnemonicParsing="false" onAction="#handleSave" text="Save" />
+            <Button layoutX="3.0" layoutY="303.0" mnemonicParsing="false" onAction="#dotFileRequestHandle" text="Generate dot file" />
          </children></AnchorPane>
   </items>
 </SplitPane>

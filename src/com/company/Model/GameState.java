@@ -73,15 +73,13 @@ public class GameState implements Serializable{
             if (curPlayer.equals(arc.getPlayer())) {
                 System.out.println("arco humano");
                 scores = board.scoresCheck();
-                return;
             } else {
                 board.nextTurn();
                 System.out.println("arco humano");
                 scores = board.scoresCheck();
-                return;
             }
         } else {
-            while (!(arc = moves.removeLast()).getPlayer().isHuman()){
+            while (moves.size() != 0 && !(arc = moves.removeLast()).getPlayer().isHuman()){
                 System.out.println(arc);
                 board.removeArc(arc);
             }
@@ -90,7 +88,6 @@ public class GameState implements Serializable{
             board.nextTurn();
             System.out.println("arco de compuatdora");
             scores = board.scoresCheck();
-            return;
         }
     }
 
