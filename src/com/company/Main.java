@@ -3,6 +3,7 @@ package com.company;
 
 import com.company.Controller.PaneController;
 import com.company.Model.GameState;
+import com.company.Model.Player;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -16,7 +17,7 @@ import java.util.Map;
 
 import static javafx.application.Platform.exit;
 
-public class Main extends Application{
+public class Main extends Application implements Serializable{
 
     private static final int HEIGHT = 1000;
     private static final int WIDTH = 1000;
@@ -47,11 +48,12 @@ public class Main extends Application{
             restart();
         }
 
-        paneController.initModel(gameState);
-
         Scene scene = new Scene(root, WIDTH, HEIGHT);
         this.primaryStage.setScene(scene);
         this.primaryStage.show();
+
+        paneController.initModel(gameState);
+
     }
 
     private Map parseInput(Parameters parameters) {
@@ -109,10 +111,6 @@ public class Main extends Application{
                         }
                         break;
                     case "-load":
-                        File f = new File(par);
-                        if(!(f.exists() && !f.isDirectory())) {
-                            throw new IllegalArgumentException("Load parameter must be an existing file");
-                        }
                         resp.put("load", par);
                         break;
                     default:
@@ -148,7 +146,10 @@ public class Main extends Application{
         try {
             fileInputStream = new FileInputStream((String) parameters.get("load"));
             objectInputStream = new ObjectInputStream(fileInputStream);
-            gameState = (GameState) objectInputStream.readObject();
+            Main oldMe = (Main) objectInputStream.readObject();
+            gameState = oldMe.gameState;
+            parameters = oldMe.parameters;
+            primaryStage = oldMe.primaryStage;
             objectInputStream.close();
         } catch (IOException | ClassNotFoundException e) {
             System.out.println(e.getMessage());
@@ -167,12 +168,25 @@ public class Main extends Application{
         try {
             fileOutputStream = new FileOutputStream(file);
             ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);
-            objectOutputStream.writeObject(gameState);
+            objectOutputStream.writeObject(this);
             objectOutputStream.flush();
             objectOutputStream.close();
         } catch (IOException e) {
             System.out.println(e.getMessage());
             System.out.println("File was not saved");
         }
+    }
+    public void saveObject(ObjectOutputStream out) throws IOException {
+        out.defaultWriteObject();
+        out.writeObject(gameState);
+        out.writeObject(parameters);
+        out.writeObject(primaryStage);
+    }
+
+    public void loadObject(ObjectInputStream ois) throws IOException, ClassNotFoundException {
+        ois.defaultReadObject();
+        gameState = (GameState) ois.readObject();
+        parameters = (Map) ois.readObject();
+        primaryStage = (Stage) ois.readObject();
     }
 }

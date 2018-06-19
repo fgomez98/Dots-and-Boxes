@@ -14,12 +14,18 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
+import javafx.scene.paint.Paint;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Rectangle;
 
 
 public class PaneController {
 
+    private static final Paint ARROW_SELECTED = Color.NAVY;
+    private static final Paint ARROW_UNSELECTED = Color.WHEAT;
+    private static final Paint SQUARE_FULL = Color.RED;
+    private static final Paint SQUARE_UNFULL = Color.WHITE;
+    private static final Paint CIRCLE_COLOR = Color.GREEN;
     private GameState gameState;
     private Main main;
     private int cols;
@@ -36,6 +42,7 @@ public class PaneController {
         setUpGState(gameState);
         grid = new GridPane();
         setUpGrid();
+        resetRectangles();
         resetScore();
         pane.getChildren().add(grid);
     }
@@ -45,8 +52,8 @@ public class PaneController {
 
         int n = gameState.size();
         this.cols = n + n - 1;
-        double maxHeight = pane.getPrefHeight();
-        double maxWidth = pane.getPrefWidth();
+        double maxHeight = pane.getHeight();
+        double maxWidth = pane.getWidth();
         double max = (maxHeight < maxWidth) ? maxHeight : maxWidth;
 
         double radius = max / (2 * (n + 3 * (n - 1)) + PADDING);
@@ -56,17 +63,17 @@ public class PaneController {
         for (int i = 0; i < cols; i++) {
             for (int j = 0; j < cols; j++) {
                 if (i % 2 == 0 && j % 2 == 0)
-                    grid.add(new Circle(radius, Color.GREEN), i, j); // column i, row j
+                    grid.add(new Circle(radius, CIRCLE_COLOR), i, j); // column i, row j
                 else if (i % 2 == 1 && j % 2 == 0) {
-                    Rectangle rect = new Rectangle(length, tall, Color.WHEAT);
+                    Rectangle rect = new Rectangle(length, tall, ARROW_UNSELECTED);
                     rect.setOnMouseClicked(new RectangleEvent());
                     grid.add(rect, i, j);
                 } else if (i % 2 == 0 && j % 2 == 1) {
-                    Rectangle rect = new Rectangle(tall, length, Color.WHEAT);
+                    Rectangle rect = new Rectangle(tall, length, ARROW_UNSELECTED);
                     rect.setOnMouseClicked(new RectangleEvent());
                     grid.add(rect, i, j);
                 }else { //cuadrados
-                    Rectangle rect = new Rectangle(length, length, Color.WHITE);
+                    Rectangle rect = new Rectangle(length, length, SQUARE_UNFULL);
                     grid.add(rect,i,j);
                 }
             }
@@ -91,12 +98,21 @@ public class PaneController {
         for (Node node : childrens) {
             i = GridPane.getColumnIndex(node); // x
             j = GridPane.getRowIndex(node); // y
-            if (i % 2 == 1 && j % 2 == 0 && hLines[j / 2][i / 2] != null) { // horizontal
-                ((Rectangle) node).setFill(Color.NAVY);
-            } else if (i % 2 == 0 && j % 2 == 1 && vLines[j / 2][i / 2] != null) { // vertical
-                ((Rectangle) node).setFill(Color.NAVY);
-            } else if (i % 2 == 1 && j % 2 == 1 && boxBoard[j / 2][i / 2] != null) {
-                ((Rectangle) node).setFill(Color.RED);
+            if (i % 2 == 1 && j % 2 == 0 ) { // horizontal
+                if (hLines[j / 2][i / 2] != null)
+                    ((Rectangle) node).setFill(ARROW_SELECTED);
+                else
+                    ((Rectangle) node).setFill(ARROW_UNSELECTED);
+            } else if (i % 2 == 0 && j % 2 == 1 ) { // vertical
+                if (vLines[j / 2][i / 2] != null)
+                    ((Rectangle) node).setFill(ARROW_SELECTED);
+                else
+                    ((Rectangle) node).setFill(Color.WHEAT);
+            } else if (i % 2 == 1 && j % 2 == 1 ) {
+                if (boxBoard[j / 2][i / 2] != null)
+                    ((Rectangle) node).setFill(SQUARE_FULL);
+                else
+                    ((Rectangle) node).setFill(SQUARE_UNFULL);
             }
         }
     }
@@ -110,7 +126,6 @@ public class PaneController {
         public void handle(MouseEvent event) {
             Node source = (Node) event.getSource();
             Rectangle rect = (Rectangle) source;
-            //rect.setFill(Color.NAVY);
             Integer colIndex = GridPane.getColumnIndex(source);
             Integer rowIndex = GridPane.getRowIndex(source);
             boolean horizontal = rowIndex % 2 == 0;
@@ -124,7 +139,7 @@ public class PaneController {
     private void undoEvent() {
         gameState.undo();
         resetRectangles();
-
+        resetScore();
     }
 
     @FXML

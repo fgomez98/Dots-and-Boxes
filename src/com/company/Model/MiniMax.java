@@ -3,9 +3,10 @@ package com.company.Model;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.io.Serializable;
 import java.util.Set;
 
-public abstract class MiniMax {
+public abstract class MiniMax implements Serializable {
 
     private int depthOrTime;
 
