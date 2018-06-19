@@ -36,14 +36,18 @@ public class Player implements Cloneable, Serializable {
         return id;
     }
 
-    public void writeObject(ObjectOutputStream out) throws IOException {
+    public void saveObject(ObjectOutputStream out) throws IOException {
         out.defaultWriteObject();
         out.writeObject(score);
+        out.writeObject(id);
+
     }
 
-    public void readObject(ObjectInputStream ois) throws IOException, ClassNotFoundException {
+    public void loadObject(ObjectInputStream ois) throws IOException, ClassNotFoundException {
         ois.defaultReadObject();
         score = (int) ois.readObject();
+        id = (int) ois.readObject();
+
     }
 
     @Override

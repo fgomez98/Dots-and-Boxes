@@ -9,7 +9,7 @@ public class Main2 {
     static Set<Board> children = new HashSet<>();
 
     public static void main(String[] args) {
-        int N = 5;
+        int N = 6;
         GameState game = new GameState(N, 2, 3, false, true);
         int i = 50;
         Random rand = new Random();

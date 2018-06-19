@@ -18,6 +18,8 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Rectangle;
 
+import java.io.*;
+
 
 public class PaneController {
 
@@ -111,7 +113,7 @@ public class PaneController {
             Integer colIndex = GridPane.getColumnIndex(source);
             Integer rowIndex = GridPane.getRowIndex(source);
             boolean horizontal = rowIndex%2 == 0;
-            gameState.handelInput(colIndex/2,rowIndex/2, horizontal);
+            gameState.handleInput(colIndex/2,rowIndex/2, horizontal);
             getArcs();
             resetRectangles();
             resetScore();
@@ -120,14 +122,26 @@ public class PaneController {
     @FXML
     private void undoEvent()
     {
+        System.out.println("puto el que lee");
         gameState.undo();
         getArcs();
         resetRectangles();
+
     }
     @FXML
     private void restartEvent()
     {
         gameState = main.restart();
         initModel(gameState);
+    }
+
+    private void saveData(File file) throws FileNotFoundException, IOException {
+        ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(file));
+        gameState.saveObject(out);
+    }
+
+    private void loadData(File file) throws FileNotFoundException, IOException, ClassNotFoundException {
+        ObjectInputStream ois = new ObjectInputStream(new FileInputStream(file));
+        gameState = new GameState(ois);
     }
 }

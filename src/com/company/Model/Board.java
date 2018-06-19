@@ -319,7 +319,7 @@ public class Board implements Serializable {
         return counter;
     }
 
-    public void writeObject(ObjectOutputStream out) throws IOException {
+    public void saveObject(ObjectOutputStream out) throws IOException {
         out.defaultWriteObject();
         out.writeObject(boxBoard);
         out.writeObject(boxVertical);
@@ -330,7 +330,7 @@ public class Board implements Serializable {
         out.writeObject(turn);
     }
 
-    public void readObject(ObjectInputStream ois) throws IOException, ClassNotFoundException {
+    public void loadObject(ObjectInputStream ois) throws IOException, ClassNotFoundException {
         ois.defaultReadObject();
         boxBoard = (Player[][]) ois.readObject();
         boxVertical = (Player[][]) ois.readObject();

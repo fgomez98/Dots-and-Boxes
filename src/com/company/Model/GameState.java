@@ -3,16 +3,17 @@ package com.company.Model;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.io.Serializable;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
 
-public class GameState {
+public class GameState implements Serializable{
     private Board board;
     private MiniMax miniMax;
     private int scores;
     private boolean timeMode;
-    private LinkedList<Set<Arc>> moves;
+    private LinkedList<Arc> moves;
 
     public GameState(int n, int mode, int depthOrTime, boolean time, boolean pruning) {
         moves = new LinkedList<>();
@@ -34,19 +35,26 @@ public class GameState {
         }
     }
 
+    public GameState(ObjectInputStream ois) throws ClassNotFoundException, IOException {
+        loadObject(ois);
+    }
+
     public void handleInput(int x, int y, boolean horizontal) { // le retorna al View el tablero que tiene que imprimir en pantalla
         if (board.getCurrentPlayer().isHuman()) {
             System.out.println("humano");
-            if (board.addArc(new Arc(board.getCurrentPlayer(), x,y, horizontal))) { // los arcos pueden ser horizontales o veritcales
+            Arc arc = new Arc(board.getCurrentPlayer(), x,y, horizontal);
+            if (board.addArc(arc)) { // los arcos pueden ser horizontales o veritcales
+                moves.addLast(arc);
                 if (scores == board.scoresCheck()) { // si es distinto el humano completo un casillero, gana un turno
                     board.nextTurn();
                 }
+                scores = board.scoresCheck();
             }
         } else { //computadora
             System.out.println("compu");
             Tree nextMove = miniMax.bestMove2(board, board.getCurrentPlayer(), board.getNextPlayer());
             board = nextMove.getBoard();
-            moves.addLast(nextMove.getArcs());
+            moves.addAll(nextMove.getArcs()); //modificar orden de agregado
             scores = board.scoresCheck();
             board.nextTurn();
         }
@@ -56,10 +64,30 @@ public class GameState {
         if (moves.size() == 0) {
             return;
         }
-        for (Arc arc : moves.removeLast()) {
-            board.removeArc(arc);
+        Arc arc = moves.removeLast();
+        System.out.println(arc);
+        board.removeArc(arc);
+        Player curPlayer = board.getCurrentPlayer();
+        if (arc.getPlayer().isHuman()) {
+            if (curPlayer.equals(arc.getPlayer())) {
+                System.out.println("puto");
+                return;
+            } else {
+                board.nextTurn();
+                System.out.println("Fer se la come");
+                return;
+            }
+        } else {
+            while (!(arc = moves.removeLast()).getPlayer().isHuman()){
+                System.out.println(arc);
+                board.removeArc(arc);
+            }
+            moves.addLast(arc);
+            board.addArc(arc);
+            board.nextTurn();
+            System.out.println("odio esta mierda");
+            return;
         }
-        scores = board.scoresCheck();
     }
 
     public boolean isWinner() {
@@ -68,16 +96,6 @@ public class GameState {
 
     public Player getWinner() {
         return board.getWinner();
-    }
-
-    public void saveBoard(ObjectOutputStream out) throws IOException {
-        out.writeObject(board);
-        out.close();
-    }
-
-    public void loadBoard(ObjectInputStream ois) throws ClassNotFoundException, IOException {
-        board = (Board) ois.readObject();
-        ois.close();
     }
 
     public int getPlayerId() {
@@ -116,5 +134,23 @@ public class GameState {
         return board.getBoxBoard();
     }
 
+    public Player getCurrentPlayer(){return board.getCurrentPlayer();}
 
+    public void saveObject(ObjectOutputStream out) throws IOException {
+        out.writeObject(board);
+        out.writeObject(miniMax);
+        out.writeObject(scores);
+        out.writeObject(timeMode);
+        out.writeObject(moves);
+        out.close();
+    }
+
+    public void loadObject(ObjectInputStream ois) throws IOException, ClassNotFoundException {
+        board = (Board) ois.readObject();
+        miniMax = (MiniMax) ois.readObject();
+        scores = (int) ois.readObject();
+        timeMode = (boolean) ois.readObject();
+        moves = (LinkedList<Arc>) ois.readObject();
+        ois.close();
+    }
 }
