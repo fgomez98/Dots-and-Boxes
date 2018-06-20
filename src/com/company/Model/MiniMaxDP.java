@@ -57,7 +57,7 @@ public class MiniMaxDP extends MiniMax {
     }
 
     @Override
-    public Tree bestMove2(Board board, Player currentPlayer, Player nextPlayer) {
+    public Tree bestMove(Board board, Player currentPlayer, Player nextPlayer) {
         Tree tree = new Tree(board);
         Tree bestBoard = null;
         tree.generateChildren();

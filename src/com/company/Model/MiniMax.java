@@ -13,16 +13,16 @@ public abstract class MiniMax implements Serializable {
         this.depthOrTime = depthOrTime;
     }
 
-    public abstract Tree bestMove2(Board board, Player currentPlayer, Player nextPlayer);
+    public abstract Tree bestMove(Board board, Player currentPlayer, Player nextPlayer);
 
-    public int heuristica(Board board, Player actualPlayer, Player lastPlayer) {
+    public int heuristica(Board board, Player callPlayer, Player evalPlayer) {//eval player es a quien le toca
         int ret;
-        if (actualPlayer.equals(board.getPlayer2())){
-            ret = 20 * (board.getPlayer1().getScore()-board.getPlayer2().getScore());//fijo un peso 10 para la diferencia de puntos entre jugadores en la posicion especificada
+        if (callPlayer.equals(board.getPlayer1())){
+            ret = 30 * (callPlayer.getScore()-board.getPlayer2().getScore());//fijo un peso 10 para la diferencia de puntos entre jugadores en la posicion especificada
         } else{
-            ret = 20 * (board.getPlayer2().getScore()-board.getPlayer1().getScore());//fijo un peso 10 para la diferencia de puntos entre jugadores en la posicion especificada
+            ret = 30 * callPlayer.getScore()-board.getPlayer1().getScore();//fijo un peso 10 para la diferencia de puntos entre jugadores en la posicion especificada
         }
-        if(actualPlayer.equals(lastPlayer)){
+        if(callPlayer.equals(evalPlayer)){
             ret += 6*board.checkBoxesOf(3) + board.checkBoxesOf(2);
         } else {
             ret -= 6*board.checkBoxesOf(3) + board.checkBoxesOf(2);

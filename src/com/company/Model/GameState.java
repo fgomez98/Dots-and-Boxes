@@ -44,14 +44,11 @@ public class GameState implements Serializable{
                 moves.addLast(arc);
                 if (scores == board.scoresCheck()) { // si es distinto el humano completo un casillero, gana un turno
                     board.nextTurn();
-                    if (!getCurrentPlayer().isHuman()) {
-                        handleInput(0,0, true);
-                    }
                 }
                 scores = board.scoresCheck();
             }
         } else { //computadora
-            Tree nextMove = miniMax.bestMove2(board, board.getCurrentPlayer(), board.getNextPlayer());
+            Tree nextMove = miniMax.bestMove(board, board.getCurrentPlayer(), board.getNextPlayer());
             board = nextMove.getBoard();
             moves.addAll(nextMove.getArcs()); //modificar orden de agregado
             scores = board.scoresCheck();
